@@ -65,8 +65,6 @@
 
                 <ul>
                     <?php
-
-                        $homeLink = "/CourseEnrollmentSimulator/profile/home.php";
                         $plannerLink = "/CourseEnrollmentSimulator/profile/planner.php";
                         $planner2Link = "/CourseEnrollmentSimulator/profile/planner2.php";
                         $planner3Link = "/CourseEnrollmentSimulator/profile/planner3.php";
@@ -77,20 +75,9 @@
                         if(isset($_SERVER["SCRIPT_NAME"])) {
                             $currentPage = $_SERVER["SCRIPT_NAME"];
 
-                            if($currentPage === $homeLink) {
+                            if(($currentPage === $plannerLink) || ($currentPage === $planner2Link) || ($currentPage === $planner3Link) || ($currentPage === $planner4Link)) {
                                 echo 
                                 "
-                                <li class='selected'><a href='home.php'><i class='fas fa-home'></i>Home</a></li>
-                                <li><a href='planner.php'><i class='fas fa-clipboard-list'></i>Planner</a></li>
-                                <li><a href='schedule.php'><i class='fas fa-calendar-alt'></i>Schedule</a></li>
-                                <li><a href='settings.php'><i class='fas fa-cog'></i>Settings</a></li>
-                                <li><a href='help.php'><i class='fas fa-question'></i>Help</a></li>
-                                ";
-                            }
-                            elseif(($currentPage === $plannerLink) || ($currentPage === $planner2Link) || ($currentPage === $planner3Link) || ($currentPage === $planner4Link)) {
-                                echo 
-                                "
-                                <li><a href='home.php'><i class='fas fa-home'></i>Home</a></li>
                                 <li class='selected'><a href='planner.php'><i class='fas fa-clipboard-list'></i>Planner</a></li>
                                 <li><a href='schedule.php'><i class='fas fa-calendar-alt'></i>Schedule</a></li>
                                 <li><a href='settings.php'><i class='fas fa-cog'></i>Settings</a></li>
@@ -100,7 +87,6 @@
                             elseif($currentPage === $scheduleLink) {
                                 echo 
                                 "
-                                <li><a href='home.php'><i class='fas fa-home'></i>Home</a></li>
                                 <li><a href='planner.php'><i class='fas fa-clipboard-list'></i>Planner</a></li>
                                 <li class='selected'><a href='schedule.php'><i class='fas fa-calendar-alt'></i>Schedule</a></li>
                                 <li><a href='settings.php'><i class='fas fa-cog'></i>Settings</a></li>
@@ -110,7 +96,6 @@
                             elseif($currentPage === $settingsLink) {
                                 echo 
                                 "
-                                <li><a href='home.php'><i class='fas fa-home'></i>Home</a></li>
                                 <li><a href='planner.php'><i class='fas fa-clipboard-list'></i>Planner</a></li>
                                 <li><a href='schedule.php'><i class='fas fa-calendar-alt'></i>Schedule</a></li>
                                 <li class='selected'><a href='settings.php'><i class='fas fa-cog'></i>Settings</a></li>
@@ -120,7 +105,6 @@
                             elseif($currentPage === $helpLink) {
                                 echo 
                                 "
-                                <li><a href='home.php'><i class='fas fa-home'></i>Home</a></li>
                                 <li><a href='planner.php'><i class='fas fa-clipboard-list'></i>Planner</a></li>
                                 <li><a href='schedule.php'><i class='fas fa-calendar-alt'></i>Schedule</a></li>
                                 <li><a href='settings.php'><i class='fas fa-cog'></i>Settings</a></li>

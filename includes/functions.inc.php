@@ -202,7 +202,7 @@ function loginStudent($conn, $uid, $pwd) {
 
         $_SESSION["studentProfile"] = $student;
 
-        header("location: ../profile/home.php");
+        header("location: ../profile/planner.php");
         exit();
     }
 }
