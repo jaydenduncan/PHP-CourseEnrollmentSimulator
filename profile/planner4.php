@@ -44,6 +44,17 @@
 ?>
 
                 <div class="info">
+
+                    <?php
+                        if(isset($_GET["error"])) {
+                            if($_GET["error"] === "classdoesnotexist") {
+                                echo "<script>alert('Something went wrong adding the class.');</script>";
+                            }
+                            elseif($_GET["error"] === "coursedoesnotexist") {
+                                echo "<script>alert('Something went wrong adding the course.');</script>";
+                            }
+                        }
+                    ?>
                     
                     <div class="classFormContainer">
                         <form class="classForm" action="../includes/addcourse.inc.php" method="post">

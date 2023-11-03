@@ -28,7 +28,7 @@
                     <div id="cartContainer">
                         <div id="coursesCart">
                             <div class="cartHeading">
-                                <p class="cartTitle">Chosen Courses</p>
+                                <p class="cartTitle">Course Cart</p>
                                 <div class="status">
                                     <?php
                                         if(!$registered){
@@ -109,62 +109,6 @@
                                     }
 
                                 ?>
-                                <!--
-                                <div id="stuClass1" class="stuClass">
-                                    <p class="classCourse">CS 101</p>
-                                    <p class="classSection">001</p>
-                                    <p class="classInstr">Oswald Burrows</p>
-                                    <p class="classST">10:00 AM</p>
-                                    <p class="classET">11:00 AM</p>
-                                    <p class="classDays">MWF</p>
-                                    <p class="classCredits">3.0</p>
-                                </div>
-                                <div id="stuClass2" class="stuClass">
-                                    <p class="classCourse">MS 101</p>
-                                    <p class="classSection">001</p>
-                                    <p class="classInstr">Oswald Burrows</p>
-                                    <p class="classST">12:15 PM</p>
-                                    <p class="classET">1:45 PM</p>
-                                    <p class="classDays">TR</p>
-                                    <p class="classCredits">3.0</p>
-                                </div>
-                                <div id="stuClass3" class="stuClass">
-                                    <p class="classCourse">EH 101</p>
-                                    <p class="classSection">001</p>
-                                    <p class="classInstr">Oswald Burrows</p>
-                                    <p class="classST">12:30 PM</p>
-                                    <p class="classET">1:30 PM</p>
-                                    <p class="classDays">MWF</p>
-                                    <p class="classCredits">3.0</p>
-                                </div>
-                                <div id="stuClass4" class="stuClass">
-                                    <p class="classCourse">CS 201</p>
-                                    <p class="classSection">001</p>
-                                    <p class="classInstr">Oswald Burrows</p>
-                                    <p class="classST">2:15 PM</p>
-                                    <p class="classET">3:45 PM</p>
-                                    <p class="classDays">TR</p>
-                                    <p class="classCredits">3.0</p>
-                                </div>
-                                <div id="stuClass5" class="stuClass">
-                                    <p class="classCourse">HY 101</p>
-                                    <p class="classSection">001</p>
-                                    <p class="classInstr">Oswald Burrows</p>
-                                    <p class="classST">WWW</p>
-                                    <p class="classET">WWW</p>
-                                    <p class="classDays">*</p>
-                                    <p class="classCredits">3.0</p>
-                                </div>
-                                <div id="stuClass6" class="stuClass">
-                                    <p class="classCourse">STU 101</p>
-                                    <p class="classSection">001</p>
-                                    <p class="classInstr">Oswald Burrows</p>
-                                    <p class="classST">3:00 PM</p>
-                                    <p class="classET">4:00 PM</p>
-                                    <p class="classDays">MW</p>
-                                    <p class="classCredits">3.0</p>
-                                </div>
-                                -->
                             </div>
                         </div>    
                     </div>
