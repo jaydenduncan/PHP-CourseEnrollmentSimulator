@@ -9,8 +9,9 @@ session_start();
 
 if(isset($_POST["submit"])) {
 
-    $classIdInput = intval($_POST["classTimeSlot"]);
+    $classIdInput = intval($_POST["classTimeSlot"]); // Class id sent from previous form
     
+    // Use class id the find class in database
     $classRow = findClassById($conn, $classIdInput);
 
     if($classRow === false) {
@@ -18,9 +19,11 @@ if(isset($_POST["submit"])) {
         exit();
     }
 
+
     $classId = $classRow["classesId"];
-    $courseId = $classRow["classesCourseId"];
+    $courseId = $classRow["classesCourseId"]; // Gets course id from class record
     
+    // Use course id to find course in database
     $courseRow = findCourseById($conn, $courseId);
 
     if($courseRow === false) {
@@ -28,6 +31,7 @@ if(isset($_POST["submit"])) {
         exit();
     }
 
+    // Use course info to create an instance of the course
     $courseAbbr = $courseRow["coursesAbbr"];
     $courseNum = $courseRow["coursesCourseNum"];
     $courseTitle = $courseRow["coursesTitle"];
@@ -42,8 +46,13 @@ if(isset($_POST["submit"])) {
     $classDays = $classRow["classesActiveDays"];
     $classType = $classRow["classesType"];
 
+    // Create a student class instance and add the class to the student's list of classes
     $stuClass = new StudentClass($classId, $course, $classSection, $classInstr, $classSt, $classEt, $classDays, $classType);
     $_SESSION["studentProfile"]->addClass($stuClass);
+
+    // Link the student to the right class in the database
+    $studentid = $_SESSION["studentProfile"]->getId();
+    addClassToCart($conn, $studentid, $classId);
 
     header("location: ../profile/planner.php?error=none");
 }

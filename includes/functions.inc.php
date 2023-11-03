@@ -606,3 +606,24 @@ function findClassById($conn, $classId) {
         mysqli_stmt_close($stmt);
     }
 }
+
+function addClassToCart($conn, $studentId, $classId) {
+    try{
+        $query = "INSERT INTO student_to_class (studentId, classId) VALUES (?, ?)";
+        $stmt = mysqli_stmt_init($conn);
+
+        if(!mysqli_stmt_prepare($stmt, $query)) {
+            header("location: ../profile/planner4.php?error=stmtfailed");
+            exit();
+        }
+        
+        mysqli_stmt_bind_param($stmt, "ii", $studentId, $classId);
+        mysqli_stmt_execute($stmt);
+    }
+    catch(Throwable $e){
+        $e->getMessage();
+    }
+    finally{
+        mysqli_stmt_close($stmt);
+    }
+}

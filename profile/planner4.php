@@ -53,6 +53,9 @@
                             elseif($_GET["error"] === "coursedoesnotexist") {
                                 echo "<script>alert('Something went wrong adding the course.');</script>";
                             }
+                            elseif($_GET["error"] === "stmtfailed") {
+                                echo "<script>alert('Something went wrong.');</script>";
+                            }
                         }
                     ?>
                     
