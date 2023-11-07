@@ -9,6 +9,9 @@
                             if($_GET["error"] === "stmtfailed") {
                                 echo "<script>alert('Something went wrong searching for courses.');</script>";
                             }
+                            elseif($_GET["error"] === "cartfailedtoload") {
+                                echo "<script>alert('Failed to retrieve classes saved to cart.');</script>";
+                            }
                             elseif($_GET["error"] === "nosubjects") {
                                 echo "<script>alert('No courses are available at this time.');</script>";
                             }

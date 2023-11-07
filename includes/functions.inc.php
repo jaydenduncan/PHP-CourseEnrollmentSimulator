@@ -202,6 +202,29 @@ function loginStudent($conn, $uid, $pwd) {
 
         $_SESSION["studentProfile"] = $student;
 
+        // Add current classes from student's cart to student session instance
+        $stuClassesRows = getClassesFromCart($conn, $id);
+        if(count($stuClassesRows) > 0) {
+            foreach($stuClassesRows as $row) {
+                $courseRow = findCourseById($conn, $row["classesCourseId"]);
+                $courseId = $courseRow["coursesId"];
+                $courseAbbr = $courseRow["coursesAbbr"];
+                $courseNum = $courseRow["coursesCourseNum"];
+                $courseTitle = $courseRow["coursesTitle"];
+                $courseDesc = $courseRow["coursesDesc"];
+                $courseCreditHrs = $courseRow["coursesCreditHrs"];
+                $course = new Course($courseId, $courseAbbr, $courseNum, $courseTitle, $courseDesc, 
+                            $courseCreditHrs);
+
+                $stuClass = new StudentClass($row["classesId"], $course, $row["classesSection"],
+                            $row["classesInstructor"], $row["classesStartTime"], 
+                            $row["classesEndTime"], $row["classesActiveDays"], $row["classesType"]);
+
+                $_SESSION["studentProfile"]->addClass($stuClass);
+            }
+        }
+
+        // Send user to their profile page
         header("location: ../profile/planner.php");
         exit();
     }
@@ -607,8 +630,11 @@ function findClassById($conn, $classId) {
     }
 }
 
+// Classes cart persistency functions
+
 function addClassToCart($conn, $studentId, $classId) {
     try{
+        // Link student id to class id in join table
         $query = "INSERT INTO student_to_class (studentId, classId) VALUES (?, ?)";
         $stmt = mysqli_stmt_init($conn);
 
@@ -619,6 +645,44 @@ function addClassToCart($conn, $studentId, $classId) {
         
         mysqli_stmt_bind_param($stmt, "ii", $studentId, $classId);
         mysqli_stmt_execute($stmt);
+    }
+    catch(Throwable $e){
+        $e->getMessage();
+    }
+    finally{
+        mysqli_stmt_close($stmt);
+    }
+}
+
+function getClassesFromCart($conn, $studentId) {
+    try{
+        // Find class ids linked to student id
+        $query = "SELECT classId FROM student_to_class WHERE studentId = ?";
+        $stmt = mysqli_stmt_init($conn);
+
+        if(!mysqli_stmt_prepare($stmt, $query)) {
+            header("location: ../profile/planner.php?error=cartfailedtoload");
+            exit();
+        }
+
+        mysqli_stmt_bind_param($stmt, "i", $studentId);
+        mysqli_stmt_execute($stmt);
+
+        $resultData = mysqli_stmt_get_result($stmt);
+
+        $classIds = array();
+        while($row = mysqli_fetch_assoc($resultData)) {
+            array_push($classIds, $row);
+        }
+
+        // Find classes that match the class ids
+        $rows = array();
+        foreach($classIds as $classIdRow){
+            $row = findClassById($conn, $classIdRow["classId"]);
+            array_push($rows, $row);
+        }
+
+        return $rows;
     }
     catch(Throwable $e){
         $e->getMessage();
