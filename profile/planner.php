@@ -106,6 +106,11 @@
                                                 <p class='classET'>$etFormatted</p>
                                                 <p class='classDays'>$classDays</p>
                                                 <p class='classCredits'>$courseCreditHrs</p>
+                                                <div class='stuClassTools'>
+                                                    <p class='infoBtn'><i class='fas fa-info'></i></p>
+                                                    <p class='editBtn'><i class='fas fa-solid fa-pen'></i></p>
+                                                    <p class='deleteBtn'><i class='fas fa-solid fa-trash'></i></p>
+                                                </div>
                                             </div>";
                                         }
 

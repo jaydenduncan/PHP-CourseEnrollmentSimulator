@@ -458,14 +458,14 @@ body {
 
 #stuClasses .stuClass {
     display: grid;
-    grid-auto-columns: 1fr;
-    grid-auto-flow: column;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(2, 50px);
     background-color: #ffffff;
     color: #000000;
     border: 1px solid #000000;
     margin-bottom: 30px;
-    height: 75px;
 }
+
 
 #stuClasses .stuClass p {
     text-align: center;
@@ -474,39 +474,56 @@ body {
 }
 
 #stuClasses .stuClass .classCourse {
-    grid-row-start: 1;
-    grid-column-start: 1;
+    grid-row: 1 / 2;
+    grid-column: 1 / 2;
 }
 
 #stuClasses .stuClass .classSection {
-    grid-row-start: 1;
-    grid-column-start: 2;
+    grid-row: 1 / 2;
+    grid-column: 2 / 3;
 }
 
 #stuClasses .stuClass .classInstr {
-    grid-row-start: 1;
-    grid-column-start: 3;
+    grid-row: 1 / 2;
+    grid-column: 3 / 4;
     width: 200px;
 }
 
 #stuClasses .stuClass .classST {
-    grid-row-start: 1;
-    grid-column-start: 4;
+    grid-row: 1 / 2;
+    grid-column: 4 / 5;
 }
 
 #stuClasses .stuClass .classET {
-    grid-row-start: 1;
-    grid-column-start: 5;
+    grid-row: 1 / 2;
+    grid-column: 5 / 6;
 }
 
 #stuClasses .stuClass .classDays {
-    grid-row-start: 1;
-    grid-column-start: 6;
+    grid-row: 1 / 2;
+    grid-column: 6 / 7;
 }
 
 #stuClasses .stuClass .classCredits {
-    grid-row-start: 1;
-    grid-column-start: 7;
+    grid-row: 1 / 2;
+    grid-column: 7 / 8;
+}
+
+#stuClasses .stuClass .stuClassTools {
+    grid-row: 2 / 3;
+    grid-column: 6 / 8;
+    display: inline-flex;
+    justify-content: right;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+}
+
+#stuClasses .stuClass .stuClassTools p{
+    margin: 10px;
+    font-size: 20px;
+    padding: 0px 9px;
+    cursor: pointer;
 }
 
 #registerBtnArea {
