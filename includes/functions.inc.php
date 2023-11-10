@@ -654,6 +654,31 @@ function addClassToCart($conn, $studentId, $classId) {
     }
 }
 
+function deleteClassFromCart($conn, $classId) {
+    try{
+        session_start();
+
+        $query = "DELETE FROM student_to_class WHERE studentId = ? AND classId = ?";
+        $stmt = mysqli_stmt_init($conn);
+
+        if(!mysqli_stmt_prepare($stmt, $query)) {
+            header("location: ../profile/planner.php?error=failedtoremoveclass");
+            exit();
+        }
+
+        $studentId = $_SESSION["studentProfile"]->getId();
+
+        mysqli_stmt_bind_param($stmt, "ii", $studentId, $classId);
+        mysqli_stmt_execute($stmt);
+    }
+    catch(Throwable $e){
+        $e->getMessage();
+    }
+    finally{
+        mysqli_stmt_close($stmt);
+    }
+}
+
 function getClassesFromCart($conn, $studentId) {
     try{
         // Find class ids linked to student id

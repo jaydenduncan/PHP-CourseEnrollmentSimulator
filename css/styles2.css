@@ -519,11 +519,22 @@ body {
     height: 50px;
 }
 
-#stuClasses .stuClass .stuClassTools p{
+#stuClasses .stuClass .stuClassTools a{
     margin: 10px;
-    font-size: 20px;
-    padding: 0px 9px;
     cursor: pointer;
+}
+
+#stuClasses .stuClass .stuClassTools a:link, 
+#stuClasses .stuClass .stuClassTools a:visited, 
+#stuClasses .stuClass .stuClassTools a:hover, 
+#stuClasses .stuClass .stuClassTools a:active{
+    color: black;
+}
+
+#stuClasses .stuClass .stuClassTools p{
+    margin: 0px;
+    font-size: 20px;
+    padding: 2px 9px;
 }
 
 #registerBtnArea {

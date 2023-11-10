@@ -91,6 +91,24 @@ class Student {
     public function addClass($stuClass) {
         array_push($this->classes, $stuClass);
     }
+
+    private function getIdxOfClass($classId) {
+        foreach($this->classes as $key=>$value){
+            if($value->getId() == $classId){
+                return $key;
+            }
+        }
+
+        return false;
+    }
+
+    public function deleteClass($classId) {
+        $index = $this->getIdxOfClass($classId);
+
+        if($index !== false){
+            unset($this->classes[$index]);
+        }
+    }
     
     public function getClasses() {
         return $this->classes;

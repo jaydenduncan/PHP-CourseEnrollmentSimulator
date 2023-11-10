@@ -1,16 +1,27 @@
 <?php 
-    require_once 'sidebar.php'
+    require_once 'sidebar.php';
 ?>
 
                 <div class="info">
 
                     <?php
+                        // Handle successes
+                        if(isset($_GET["success"])) {
+                            if($_GET["success"] === "removedclassfromcart") {
+                                echo "<script>alert('Class successfully removed!');</script>";
+                            }
+                        }
+
+                        // Handle errors
                         if(isset($_GET["error"])) {
                             if($_GET["error"] === "stmtfailed") {
                                 echo "<script>alert('Something went wrong searching for courses.');</script>";
                             }
                             elseif($_GET["error"] === "cartfailedtoload") {
                                 echo "<script>alert('Failed to retrieve classes saved to cart.');</script>";
+                            }
+                            elseif($_GET["error"] === "failedtoremoveclass") {
+                                echo "<script>alert('Failed to remove the class from the cart.');</script>";
                             }
                             elseif($_GET["error"] === "nosubjects") {
                                 echo "<script>alert('No courses are available at this time.');</script>";
@@ -59,13 +70,14 @@
 
                             <div id="stuClasses">
                                 <?php
-
+                                    // Show default message if the student has no classes in cart
                                     if(empty($student->getClasses())) {
                                         echo 
                                         "<div class='defaultClassDiv'>
                                             <p>No classes in shopping cart. Click 'Add Course' to add a course.</p>
                                         </div>";
                                     }
+                                    // Else, display list of all classes w/class information
                                     else {
                                         $classes = $student->getClasses();
                                         
@@ -75,6 +87,7 @@
                                             $courseNum = $course->getCourseNumber();
                                             $courseCreditHrs = $course->getCreditHours();
 
+                                            $classId = $stuClass->getId();
                                             $classSection = $stuClass->getSection();
                                             $classInstr = $stuClass->getInstructor();
                                             $stTimestamp = $stuClass->getStartTime();
@@ -107,9 +120,9 @@
                                                 <p class='classDays'>$classDays</p>
                                                 <p class='classCredits'>$courseCreditHrs</p>
                                                 <div class='stuClassTools'>
-                                                    <p class='infoBtn'><i class='fas fa-info'></i></p>
-                                                    <p class='editBtn'><i class='fas fa-solid fa-pen'></i></p>
-                                                    <p class='deleteBtn'><i class='fas fa-solid fa-trash'></i></p>
+                                                    <a href='../includes/getClassInfo.inc.php?info=true&classid=$classId'><p class='infoBtn'><i class='fas fa-info'></i></p></a>
+                                                    <a href='../includes/editClass.inc.php?edit=true&classid=$classId'><p class='editBtn'><i class='fas fa-solid fa-pen'></i></p></a>
+                                                    <a href='../includes/deleteClass.inc.php?delete=true&classid=$classId'><p class='deleteBtn'><i class='fas fa-solid fa-trash'></i></p></a>
                                                 </div>
                                             </div>";
                                         }
