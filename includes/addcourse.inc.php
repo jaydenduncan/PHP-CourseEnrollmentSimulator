@@ -8,8 +8,20 @@ require_once '../classes/studentclass.php';
 session_start();
 
 if(isset($_POST["submit"])) {
-
+    $studentid = $_SESSION["studentProfile"]->getId();
     $classIdInput = intval($_POST["classTimeSlot"]); // Class id sent from previous form
+
+    // Determine if the class the user is trying to add is a duplicate
+    $stuClassesRows = getClassesFromCart($conn, $studentid);
+
+    if(count($stuClassesRows) > 0){
+        foreach($stuClassesRows as $row){
+            if($row["classesId"] === $classIdInput){
+                header("location: ../profile/planner2.php?error=classalreadyincart");
+                exit();
+            }
+        }
+    }
     
     // Use class id the find class in database
     $classRow = findClassById($conn, $classIdInput);
@@ -51,7 +63,6 @@ if(isset($_POST["submit"])) {
     $_SESSION["studentProfile"]->addClass($stuClass);
 
     // Link the student to the right class in the database
-    $studentid = $_SESSION["studentProfile"]->getId();
     addClassToCart($conn, $studentid, $classId);
 
     header("location: ../profile/planner.php?error=none");

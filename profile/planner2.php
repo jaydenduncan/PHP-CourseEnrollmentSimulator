@@ -36,6 +36,9 @@
                             elseif($_GET["error"] === "noclasses") {
                                 echo "<script>alert('No classes in that course are available at this time.');</script>";
                             }
+                            elseif($_GET["error"] === "classalreadyincart") {
+                                echo "<script>alert('This class is already in your cart. Try adding another one.');</script>";
+                            }
                         }
                     ?>
                     
