@@ -65,13 +65,22 @@
 
                 <ul>
                     <?php
-                        $plannerLink = "/CourseEnrollmentSimulator/profile/planner.php";
-                        $planner2Link = "/CourseEnrollmentSimulator/profile/planner2.php";
-                        $planner3Link = "/CourseEnrollmentSimulator/profile/planner3.php";
-                        $planner4Link = "/CourseEnrollmentSimulator/profile/planner4.php";
-                        $scheduleLink = "/CourseEnrollmentSimulator/profile/schedule.php";
-                        $settingsLink = "/CourseEnrollmentSimulator/profile/settings.php";
-                        $helpLink = "/CourseEnrollmentSimulator/profile/help.php";
+                        function debug_to_console($data) {
+                            $output = $data;
+                            if (is_array($output))
+                                $output = implode(',', $output);
+
+                            echo "<script>console.log('Debug Objects: " . $output . "' );</script>";
+                        }
+
+                        $uri = explode('/', $_SERVER['REQUEST_URI'])[1];
+                        $plannerLink = "/" . $uri . "/profile/planner.php";
+                        $planner2Link = "/" . $uri . "/profile/planner2.php";
+                        $planner3Link = "/" . $uri . "/profile/planner3.php";
+                        $planner4Link = "/" . $uri . "/profile/planner4.php";
+                        $scheduleLink = "/" . $uri . "/profile/schedule.php";
+                        $settingsLink = "/" . $uri . "/profile/settings.php";
+                        $helpLink = "/" . $uri . "/profile/help.php";
                         if(isset($_SERVER["SCRIPT_NAME"])) {
                             $currentPage = $_SERVER["SCRIPT_NAME"];
 
