@@ -25,7 +25,8 @@
                     <?php 
                         if(isset($_SERVER["SCRIPT_NAME"])) {
                             $currentPage = $_SERVER["SCRIPT_NAME"];
-                            if($currentPage === "/CourseEnrollmentSimulator/index.php"){
+                            $uri = explode('/', $_SERVER['REQUEST_URI'])[1];
+                            if($currentPage === "/" . $uri . "/index.php"){
                                 echo 
                                 "
                                 <li><a href='index.php' style='color:blue'>HOME</a></li>
@@ -33,7 +34,7 @@
                                 <li><a href='login.php'>LOGIN</a></li>
                                 ";
                             }
-                            elseif($currentPage === "/CourseEnrollmentSimulator/signup.php"){
+                            elseif($currentPage === "/" . $uri . "/signup.php"){
                                 echo 
                                 "
                                 <li><a href='index.php'>HOME</a></li>
@@ -41,7 +42,7 @@
                                 <li><a href='login.php'>LOGIN</a></li>
                                 ";
                             }
-                            elseif($currentPage === "/CourseEnrollmentSimulator/login.php"){
+                            elseif($currentPage === "/" . $uri . "/login.php"){
                                 echo 
                                 "
                                 <li><a href='index.php'>HOME</a></li>

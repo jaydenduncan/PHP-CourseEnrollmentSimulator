@@ -1,8 +1,6 @@
 <?php require_once '../classes/student.php';
 session_start();
 
-// Get original data from session
-
 require_once 'dbh.inc.php'; require_once 'functions.inc.php';
 
 if(isset($_POST["submit"])) {
