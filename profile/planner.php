@@ -29,6 +29,9 @@
                             elseif($_GET["error"] === "none") {
                                 echo "<script>alert('Class successfully added!');</script>";
                             }
+                            elseif($_GET["error"] === "toomanyhours") {
+                                echo "<script>alert('There are enough credit hours in your cart. Try removing a class or tap \'Register\' to register your classes.');</script>";
+                            }
                         }
                     ?>
                     

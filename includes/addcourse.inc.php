@@ -7,6 +7,30 @@ require_once '../classes/studentclass.php';
 
 session_start();
 
+function timestampToFormat($ts){
+    $dateTimeImmutable = new DateTimeImmutable();
+
+    $timeFormatted = $dateTimeImmutable->setTimestamp($ts)->format('h:i A');
+    return $timeFormatted;
+}
+
+function formatToTimestamp($format){
+    $ts = strtotime("today $format");
+    return $ts;
+}
+
+function hasInterference($nextST, $nextET, $currST, $currET){
+    // See if start time of new class falls between the start and end time of another class in the cart
+    if(($nextST >= $currST) && ($nextST <= $currET)){
+        return true;
+    }
+    else if(($nextET >= $currST) && ($nextET <= $currET)){
+        return true;
+    }
+
+    return false;
+}
+
 if(isset($_POST["submit"])) {
     $studentid = $_SESSION["studentProfile"]->getId();
     $classIdInput = intval($_POST["classTimeSlot"]); // Class id sent from previous form
@@ -20,6 +44,49 @@ if(isset($_POST["submit"])) {
                 header("location: ../profile/planner2.php?error=classalreadyincart");
                 exit();
             }
+        }
+    }
+
+    // Determine if the class the user is trying to add interferes with any other class in the cart
+    $nextCartClass = findClassById($conn, $classIdInput);
+    $currCartClasses = $_SESSION["studentProfile"]->getClasses();
+
+    $nextCartClassType = $nextCartClass['classesType'];
+    $nextCartClassActiveDays = $nextCartClass['classesActiveDays'];
+    $nextCartClassST = $nextCartClass['classesStartTime'];
+    $nextCartClassET = $nextCartClass['classesEndTime'];
+
+    $nextCartClassST = formatToTimestamp(timestampToFormat($nextCartClassST));
+    $nextCartClassET = formatToTimestamp(timestampToFormat($nextCartClassET));
+
+    if(count($currCartClasses) > 0){
+        foreach($currCartClasses as $cartClass){
+            $currCartClassType = $cartClass->getType();
+            $currCartClassActiveDays = $cartClass->getActiveDays();
+            $currCartClassST = formatToTimestamp(timestampToFormat($cartClass->getStartTime()));
+            $currCartClassET = formatToTimestamp(timestampToFormat($cartClass->getEndTime()));
+
+            if($nextCartClassType !== "ONL"){
+                if($nextCartClassActiveDays === $currCartClassActiveDays){
+                    if(hasInterference($nextCartClassST, $nextCartClassET, $currCartClassST, $currCartClassET) || 
+                       hasInterference($currCartClassST, $currCartClassET, $nextCartClassST, $nextCartClassET)){
+                        header("location: ../profile/planner2.php?error=classinterference");
+                        exit();
+                    }
+                }
+            }
+        }
+    }
+
+    // Determine if the user already has enough credit hours in cart 
+    if(count($currCartClasses) > 0){
+        $totalHrs = 0;
+        foreach($currCartClasses as $cartClass){
+            $totalHrs += $cartClass->getCourse()->getCreditHours();
+        }
+        if($totalHrs >= 15){
+            header("location: ../profile/planner.php?error=toomanyhours");
+            exit();
         }
     }
     
