@@ -10,6 +10,9 @@
                             if($_GET["success"] === "removedclassfromcart") {
                                 echo "<script>alert('Class successfully removed!');</script>";
                             }
+                            elseif($_GET["success"] === "registeringclasses") {
+                                echo "<script>alert('Registering classes...');</script>";
+                            }
                         }
 
                         // Handle errors
@@ -31,6 +34,12 @@
                             }
                             elseif($_GET["error"] === "toomanyhours") {
                                 echo "<script>alert('There are enough credit hours in your cart. Try removing a class or tap \'Register\' to register your classes.');</script>";
+                            }
+                            elseif($_GET["error"] === "notenoughhours") {
+                                echo "<script>alert('The classes in your cart must accumulate to at least 12 credit hours before registering. Try adding more classes to your cart.');</script>";
+                            }
+                            elseif($_GET["error"] === "noclassesincart") {
+                                echo "<script>alert('There are currently no classes in your cart. Tap \'Add Course\' to starting adding classes.');</script>";
                             }
                         }
                     ?>
@@ -139,7 +148,7 @@
 
                     <div id="registerBtnArea">
                         <div id="registerBtnContainer">
-                            <a href="register.inc.php"><button id="registerBtn">Register</button></a>
+                            <a href="../includes/register.inc.php"><button id="registerBtn">Register</button></a>
                         </div>
                     </div>
 
