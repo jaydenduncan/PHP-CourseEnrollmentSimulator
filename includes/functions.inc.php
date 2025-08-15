@@ -432,7 +432,7 @@ function updatePassword($conn, $newPwd) {
 
 function findSubjects($conn) {
     try{
-        $query = "SELECT DISTINCT coursesAbbr from courses";
+        $query = "SELECT DISTINCT coursesAbbr from courses;";
 
         $stmt = mysqli_stmt_init($conn);
 
@@ -602,7 +602,7 @@ function findClasses($conn, $courseInput) {
 
 function findClassById($conn, $classId) {
     try{
-        $query = "SELECT * FROM classes WHERE classesId = ?";
+        $query = "SELECT * FROM classes WHERE classesId = ?;";
         $stmt = mysqli_stmt_init($conn);
 
         if(!mysqli_stmt_prepare($stmt, $query)) {
@@ -635,7 +635,7 @@ function findClassById($conn, $classId) {
 function addClassToCart($conn, $studentId, $classId) {
     try{
         // Link student id to class id in join table
-        $query = "INSERT INTO student_to_class (studentId, classId) VALUES (?, ?)";
+        $query = "INSERT INTO student_to_class (studentId, classId) VALUES (?, ?);";
         $stmt = mysqli_stmt_init($conn);
 
         if(!mysqli_stmt_prepare($stmt, $query)) {
@@ -658,7 +658,7 @@ function deleteClassFromCart($conn, $classId) {
     try{
         session_start();
 
-        $query = "DELETE FROM student_to_class WHERE studentId = ? AND classId = ?";
+        $query = "DELETE FROM student_to_class WHERE studentId = ? AND classId = ?;";
         $stmt = mysqli_stmt_init($conn);
 
         if(!mysqli_stmt_prepare($stmt, $query)) {
@@ -682,7 +682,7 @@ function deleteClassFromCart($conn, $classId) {
 function getClassesFromCart($conn, $studentId) {
     try{
         // Find class ids linked to student id
-        $query = "SELECT classId FROM student_to_class WHERE studentId = ?";
+        $query = "SELECT classId FROM student_to_class WHERE studentId = ?;";
         $stmt = mysqli_stmt_init($conn);
 
         if(!mysqli_stmt_prepare($stmt, $query)) {
@@ -708,6 +708,36 @@ function getClassesFromCart($conn, $studentId) {
         }
 
         return $rows;
+    }
+    catch(Throwable $e){
+        $e->getMessage();
+    }
+    finally{
+        mysqli_stmt_close($stmt);
+    }
+}
+
+function registerStudent($conn) {
+    try{
+        session_start();
+
+        $studentId = ($_SESSION["studentProfile"]->getId());
+        $studentRegistered = ($_SESSION["studentProfile"]->getRegistered());
+        $newStudentRegistered = !($studentRegistered);
+
+        $query = "UPDATE students SET studentsRegistered = ? WHERE studentsId = ?;";
+
+        $stmt = mysqli_stmt_init($conn);
+
+        if(!mysqli_stmt_prepare($stmt, $query)) {
+            header("location: ../profile/planner.php?error=stmtfailed");
+            exit();
+        }
+
+        mysqli_stmt_bind_param($stmt, "ii", $newStudentRegistered, $studentId);
+        mysqli_stmt_execute($stmt);
+
+        $_SESSION["studentProfile"]->setRegistered($newStudentRegistered);
     }
     catch(Throwable $e){
         $e->getMessage();

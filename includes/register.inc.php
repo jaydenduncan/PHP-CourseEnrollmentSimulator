@@ -1,4 +1,6 @@
 <?php
+require_once 'dbh.inc.php';
+require_once 'functions.inc.php';
 require_once '../classes/course.php';
 require_once '../classes/student.php';
 require_once '../classes/studentclass.php';
@@ -23,6 +25,6 @@ else{
     exit();
 }
 
-// Register classes
+// Register student
+registerStudent($conn);
 header("location: ../profile/planner.php?success=registeringclasses");
-exit();

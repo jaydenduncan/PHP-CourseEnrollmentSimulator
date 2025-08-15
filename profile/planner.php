@@ -18,7 +18,7 @@
                         // Handle errors
                         if(isset($_GET["error"])) {
                             if($_GET["error"] === "stmtfailed") {
-                                echo "<script>alert('Something went wrong searching for courses.');</script>";
+                                echo "<script>alert('Something went wrong.');</script>";
                             }
                             elseif($_GET["error"] === "cartfailedtoload") {
                                 echo "<script>alert('Failed to retrieve classes saved to cart.');</script>";
@@ -43,13 +43,27 @@
                             }
                         }
                     ?>
-                    
-                    <div id="addCourseLinkDiv">
-                        <a id="addCourseLink" href="planner2.php">
-                            <p>Add Course</p>
-                            <i class="fas fa-plus"></i>
-                        </a>
-                    </div>
+
+                    <?php 
+                        if(!$registered){
+                            echo
+                            "<div id='addCourseLinkDiv'>
+                                <a id='addCourseLink' href='planner2.php'>
+                                    <p>Add Course</p>
+                                    <i class='fas fa-plus'></i>
+                                </a>
+                            </div>";
+                        }
+                        else{
+                            echo
+                            "<div id='addCourseLinkDiv'>
+                                <a id='addCourseLink' href='planner2.php' style='display:none'>
+                                    <p>Add Course</p>
+                                    <i class='fas fa-plus'></i>
+                                </a>
+                            </div>";
+                        }
+                    ?>
 
                     <div id="cartContainer">
                         <div id="coursesCart">
@@ -122,23 +136,38 @@
                                                 $etFormatted = "WWW";
                                             }
 
-                                            echo 
-                                            "<div class='stuClass'>
-                                                <p class='classCourse'>$courseAbbr $courseNum</p>
-                                                <p class='classSection'>$classSection</p>
-                                                <p class='classInstr'>$classInstr</p>
-                                                <p class='classST'>$stFormatted</p>
-                                                <p class='classET'>$etFormatted</p>
-                                                <p class='classDays'>$classDays</p>
-                                                <p class='classCredits'>$courseCreditHrs</p>
-                                                <div class='stuClassTools'>
-                                                    <a href='../includes/getClassInfo.inc.php?info=true&classid=$classId'><p class='infoBtn'><i class='fas fa-info'></i></p></a>
-                                                    <a href='../includes/editClass.inc.php?edit=true&classid=$classId'><p class='editBtn'><i class='fas fa-solid fa-pen'></i></p></a>
-                                                    <a href='../includes/deleteClass.inc.php?delete=true&classid=$classId'><p class='deleteBtn'><i class='fas fa-solid fa-trash'></i></p></a>
-                                                </div>
-                                            </div>";
+                                            if(!$registered){
+                                                echo 
+                                                "<div class='stuClass'>
+                                                    <p class='classCourse'>$courseAbbr $courseNum</p>
+                                                    <p class='classSection'>$classSection</p>
+                                                    <p class='classInstr'>$classInstr</p>
+                                                    <p class='classST'>$stFormatted</p>
+                                                    <p class='classET'>$etFormatted</p>
+                                                    <p class='classDays'>$classDays</p>
+                                                    <p class='classCredits'>$courseCreditHrs</p>
+                                                    <div class='stuClassTools'>
+                                                        <a href='../includes/getClassInfo.inc.php?info=true&classid=$classId'><p class='infoBtn'><i class='fas fa-info'></i></p></a>
+                                                        <a href='../includes/deleteClass.inc.php?delete=true&classid=$classId'><p class='deleteBtn'><i class='fas fa-solid fa-trash'></i></p></a>
+                                                    </div>
+                                                </div>";
+                                            }
+                                            else{
+                                                echo 
+                                                "<div class='stuClass'>
+                                                    <p class='classCourse'>$courseAbbr $courseNum</p>
+                                                    <p class='classSection'>$classSection</p>
+                                                    <p class='classInstr'>$classInstr</p>
+                                                    <p class='classST'>$stFormatted</p>
+                                                    <p class='classET'>$etFormatted</p>
+                                                    <p class='classDays'>$classDays</p>
+                                                    <p class='classCredits'>$courseCreditHrs</p>
+                                                    <div class='stuClassTools'>
+                                                        <a href='../includes/getClassInfo.inc.php?info=true&classid=$classId'><p class='infoBtn'><i class='fas fa-info'></i></p></a>
+                                                    </div>
+                                                </div>";
+                                            }
                                         }
-
                                     }
 
                                 ?>
@@ -146,11 +175,24 @@
                         </div>    
                     </div>
 
-                    <div id="registerBtnArea">
-                        <div id="registerBtnContainer">
-                            <a href="../includes/register.inc.php"><button id="registerBtn">Register</button></a>
-                        </div>
-                    </div>
+                    <?php
+                        if(!$registered){
+                            echo
+                            "<div id='registerBtnArea'>
+                                <div id='registerBtnContainer'>
+                                    <a href='../includes/register.inc.php'><button id='registerBtn'>Register</button></a>
+                                </div>
+                            </div>";
+                        }
+                        else{
+                            echo
+                            "<div id='registerBtnArea'>
+                                <div id='registerBtnContainer'>
+                                    <a href='../includes/register.inc.php' style='display:none'><button id='registerBtn'>Register</button></a>
+                                </div>
+                            </div>";
+                        }
+                    ?>
 
                 </div> 
 
