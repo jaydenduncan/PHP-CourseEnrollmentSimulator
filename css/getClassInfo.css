@@ -1,0 +1,51 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap');
+
+body {
+	background-color: #0f149a;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    font-family: 'Merriweather';
+}
+
+.classInfoDiv{
+    position: absolute;
+    border: 2px solid black;
+    border-radius: 30px;
+    background-color: white;
+    min-height: 60vh;
+    width: 60vw;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 30px;
+    font-size: 17px;
+}
+
+.classInfoDiv .courseNum{
+    text-align: center;
+    margin-bottom: 5%;
+    font-size: 20px;
+}
+
+.classInfoDiv p{
+    padding: 10px;
+}
+
+.classInfoDiv .backBtn{
+    background-color: #0f149a;
+    border: 0px;
+    border-radius: 7px;
+    color: #ffffff;
+    font-size: 20px;
+    cursor: pointer;
+    height: 40px;
+    width: 125px;
+    margin-top: 75px;
+}
