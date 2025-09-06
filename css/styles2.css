@@ -604,3 +604,19 @@ body {
 .classForm .btnSet .nextBtn, .addBtn {
     float: right;
 }
+
+/* schedule.php styles */
+.daysOfWeekHeader{
+    display: grid;
+    grid-template-columns: repeat(7, minmax(100px, 1fr));
+    width: 95%;
+    margin: 10px auto;
+    padding: 15px 0;
+    border-radius: 15px;
+    background-color: #ffffff;
+    font-size: 20px;
+}
+
+.daysOfWeekHeader p{
+    font-weight: bold;
+}
