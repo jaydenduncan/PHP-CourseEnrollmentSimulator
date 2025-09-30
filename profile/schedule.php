@@ -11,7 +11,7 @@
                         <p>THU</p>
                         <p>FRI</p>
                     </div>
-                    <div class="scheduleDiv">
+                    <div id="scheduleDiv" class="scheduleDiv">
                         <div class="timeLabels">
                             <p>12:00 AM</p>
                             <p>1:00 AM</p>
@@ -39,22 +39,54 @@
                             <p>11:00 PM</p>
                         </div>
                         <div class="monClasses">
-                            <div id="CS101Slot" class="classSlot">
-                                <h2>CS 101</h2>
-                                <p>12:00AM - 1:00AM</p>
+                            <div id="MS101Slot" class="classSlot mwf">
+                                <h3>MS 101</h3>
+                                <p>8:15AM - 9:15AM</p>
+                            </div>
+                            <div id="CS101Slot" class="classSlot mwf">
+                                <h3>CS 101</h3>
+                                <p>9:30AM - 10:30AM</p>
                             </div>
                         </div>
                         <div class="tueClasses">
-
+                            <div id="BY101Slot" class="classSlot tr">
+                                <h3>BY 101</h3>
+                                <p>8:45AM - 10:15AM</p>
+                            </div>
+                            <div id="CS115Slot" class="classSlot tr">
+                                <h3>CS 115</h3>
+                                <p>12:15PM - 1:45PM</p>
+                            </div>
                         </div>
                         <div class="wedClasses">
-                            
+                            <div id="MS101Slot" class="classSlot mwf">
+                                <h3>MS 101</h3>
+                                <p>8:15AM - 9:15AM</p>
+                            </div>
+                            <div id="CS101Slot" class="classSlot mwf">
+                                <h3>CS 101</h3>
+                                <p>9:30AM - 10:30AM</p>
+                            </div>
                         </div>
                         <div class="thuClasses">
-                            
+                            <div id="BY101Slot" class="classSlot tr">
+                                <h3>BY 101</h3>
+                                <p>8:45AM - 10:15AM</p>
+                            </div>
+                            <div id="CS115Slot" class="classSlot tr">
+                                <h3>CS 115</h3>
+                                <p>12:15PM - 1:45PM</p>
+                            </div>
                         </div>
                         <div class="friClasses">
-                            
+                            <div id="MS101Slot" class="classSlot mwf">
+                                <h3>MS 101</h3>
+                                <p>8:15AM - 9:15AM</p>
+                            </div>
+                            <div id="CS101Slot" class="classSlot mwf">
+                                <h3>CS 101</h3>
+                                <p>9:30AM - 10:30AM</p>
+                            </div>
                         </div>
                     </div>
                 </div>

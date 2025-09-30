@@ -621,7 +621,6 @@ body {
     font-weight: bold;
     text-align: center;
     padding: 15px 0;
-    /* border: 2px solid black; */
 }
 
 .scheduleDiv{
@@ -649,13 +648,12 @@ body {
 
 .scheduleDiv .timeLabels p{
     padding: 0px 15px;
-    /* border: 2px solid black; */
 }
 
 .classSlot{
     background-color: #fd9b4d;
     text-align: center;
-    width: 75%;
+    width: 150px;
     margin: 0 auto;
     padding: 10px;
     position: relative;
@@ -665,64 +663,50 @@ body {
     margin-top: 20%;
 }
 
-.scheduleDiv .monClasses{
-    display: grid;
-    grid-template-rows: repeat(24, minmax(100px, 1fr));
+.mwf{
+    height: 100px;
+}
+
+.tr{
+    height: 150px;
+}
+
+#BY101Slot{
+    margin-top: 875px;
+}
+
+#MS101Slot{
+    margin-top: 825px;
 }
 
 #CS101Slot{
-    grid-row-start: 1;
-    grid-row-end: 2;
+    margin-top: 25px;
 }
 
-#EH101Slot{
-    grid-row-start: 3;
-    grid-row-end: 4;
+#CS115Slot{
+    margin-top: 200px;
 }
 
-/* .scheduleDiv .monClasses hr{
-    margin-top: 10px;
-    padding: 0px 15px;
-    height: 2px;
-    background-color: #8f8d8c;
-    border: none;
+.scheduleDiv .monClasses{
+    display: block;
 }
-
-.scheduleDiv .monClasses hr:nth-child(4n-1){
-    border: none;
-    height: 0;
-    background-color: white;
-    border-top: 2px dashed #b5b0ae;
-}
-
-.scheduleDiv .monClasses hr:nth-child(even){
-    border: none;
-    height: 0;
-    background-color: white;
-    border-top: 2px dashed red;
-} */
 
 .scheduleDiv .tueClasses{
-    display: grid;
-    grid-template-rows: repeat(24, minmax(100px, 1fr));
+    display: block;
 }
 
 .scheduleDiv .wedClasses{
-    display: grid;
-    grid-template-rows: repeat(24, minmax(100px, 1fr));
+    display: block;
 }
 
 .scheduleDiv .thuClasses{
-    display: grid;
-    grid-template-rows: repeat(24, minmax(100px, 1fr));
+    display: block;
 }
 
 .scheduleDiv .friClasses{
-    display: grid;
-    grid-template-rows: repeat(24, minmax(100px, 1fr));
+    display: block;
 }
 
 .scheduleDiv div{
-    /* border: 2px solid black; */
     padding: 15px 0;
 }
