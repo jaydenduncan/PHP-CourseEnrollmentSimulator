@@ -1,5 +1,49 @@
 <?php 
-    require_once 'sidebar.php'
+    require_once 'sidebar.php';
+    require_once '../includes/functions.inc.php';
+
+    $mwfPositions = array();
+    $trPositions = array();
+
+    $classes = $student->getClasses();
+    foreach($classes as $stuClass){
+        if($stuClass->getType() !== "ONL"){
+            $posMap = array();
+
+            $stTimestamp = $stuClass->getStartTime();
+            $etTimestamp = $stuClass->getEndTime();
+
+            $stArr = getClassHourAndMinute($stTimestamp);
+            $etArr = getClassHourAndMinute($etTimestamp);
+            $classPos = getClassStartAndEndPos($stArr, $etArr);
+
+            $posMap["classId"] = $stuClass->getId();
+            $posMap["startTimePos"] = $classPos[0];
+            $posMap["endTimePos"] = $classPos[1];
+
+            if($stuClass->getActiveDays() === "MWF"){
+                array_push($mwfPositions, $posMap);
+            }
+            else if($stuClass->getActiveDays() === "TR"){
+                array_push($trPositions, $posMap);
+            }
+        }
+    }
+
+    usort($mwfPositions, "stPosSort");
+    usort($trPositions, "stPosSort");
+
+    setMarginTopOffsets($mwfPositions);
+    setMarginTopOffsets($trPositions);
+
+    $mtOffsets = array();
+    foreach($mwfPositions as $mwfPos){
+        $mtOffsets[$mwfPos["classId"]] = $mwfPos["mtOffset"];
+    }
+
+    foreach($trPositions as $trPos){
+        $mtOffsets[$trPos["classId"]] = $trPos["mtOffset"];
+    }
 ?>
 
                 <div class="info">
@@ -39,54 +83,149 @@
                             <p>11:00 PM</p>
                         </div>
                         <div class="monClasses">
-                            <div id="MS101Slot" class="classSlot mwf">
-                                <h3>MS 101</h3>
-                                <p>8:15AM - 9:15AM</p>
-                            </div>
-                            <div id="CS101Slot" class="classSlot mwf">
-                                <h3>CS 101</h3>
-                                <p>9:30AM - 10:30AM</p>
-                            </div>
+                            <?php
+                                $classes = $student->getClasses();
+                                usort($classes, "stuClassSTSort");
+                                if(count($classes) > 0 && $registered){
+                                    foreach($classes as $stuClass){
+                                        $classDays = strtolower($stuClass->getActiveDays());
+                                        if($classDays === "mwf"){
+                                            $classId = $stuClass->getId();
+                                            $course = $stuClass->getCourse();
+                                            $courseAbbr = $course->getAbbreviation();
+                                            $courseNum = $course->getCourseNumber();
+                                            $stTimestamp = $stuClass->getStartTime();
+                                            $etTimestamp = $stuClass->getEndTime();
+                                            $dateTimeImmutable = new DateTimeImmutable();
+                                            $stFormatted = $dateTimeImmutable->setTimestamp($stTimestamp)->format('g:i A');
+                                            $etFormatted = $dateTimeImmutable->setTimestamp($etTimestamp)->format('g:i A');
+                                            $marginTop = $mtOffsets[$classId];
+
+                                            echo
+                                            "<div class='classSlot $classDays' style='margin-top: $marginTop" . "px'>
+                                                <h3>$courseAbbr $courseNum</h3>
+                                                <p>$stFormatted - $etFormatted</p>
+                                            </div>";
+                                        }
+                                    }
+                                }
+                            ?>
                         </div>
                         <div class="tueClasses">
-                            <div id="BY101Slot" class="classSlot tr">
-                                <h3>BY 101</h3>
-                                <p>8:45AM - 10:15AM</p>
-                            </div>
-                            <div id="CS115Slot" class="classSlot tr">
-                                <h3>CS 115</h3>
-                                <p>12:15PM - 1:45PM</p>
-                            </div>
+                            <?php
+                                $classes = $student->getClasses();
+                                usort($classes, "stuClassSTSort");
+                                if(count($classes) > 0 && $registered){
+                                    foreach($classes as $stuClass){
+                                        $classDays = strtolower($stuClass->getActiveDays());
+                                        if($classDays === "tr"){
+                                            $classId = $stuClass->getId();
+                                            $course = $stuClass->getCourse();
+                                            $courseAbbr = $course->getAbbreviation();
+                                            $courseNum = $course->getCourseNumber();
+                                            $stTimestamp = $stuClass->getStartTime();
+                                            $etTimestamp = $stuClass->getEndTime();
+                                            $dateTimeImmutable = new DateTimeImmutable();
+                                            $stFormatted = $dateTimeImmutable->setTimestamp($stTimestamp)->format('g:i A');
+                                            $etFormatted = $dateTimeImmutable->setTimestamp($etTimestamp)->format('g:i A');
+                                            $marginTop = $mtOffsets[$classId];
+
+                                            echo
+                                            "<div class='classSlot $classDays' style='margin-top: $marginTop" . "px'>
+                                                <h3>$courseAbbr $courseNum</h3>
+                                                <p>$stFormatted - $etFormatted</p>
+                                            </div>";
+                                        }
+                                    }
+                                }
+                            ?>
                         </div>
                         <div class="wedClasses">
-                            <div id="MS101Slot" class="classSlot mwf">
-                                <h3>MS 101</h3>
-                                <p>8:15AM - 9:15AM</p>
-                            </div>
-                            <div id="CS101Slot" class="classSlot mwf">
-                                <h3>CS 101</h3>
-                                <p>9:30AM - 10:30AM</p>
-                            </div>
+                            <?php
+                                $classes = $student->getClasses();
+                                usort($classes, "stuClassSTSort");
+                                if(count($classes) > 0 && $registered){
+                                    foreach($classes as $stuClass){
+                                        $classDays = strtolower($stuClass->getActiveDays());
+                                        if($classDays === "mwf"){
+                                            $classId = $stuClass->getId();
+                                            $course = $stuClass->getCourse();
+                                            $courseAbbr = $course->getAbbreviation();
+                                            $courseNum = $course->getCourseNumber();
+                                            $stTimestamp = $stuClass->getStartTime();
+                                            $etTimestamp = $stuClass->getEndTime();
+                                            $dateTimeImmutable = new DateTimeImmutable();
+                                            $stFormatted = $dateTimeImmutable->setTimestamp($stTimestamp)->format('g:i A');
+                                            $etFormatted = $dateTimeImmutable->setTimestamp($etTimestamp)->format('g:i A');
+                                            $marginTop = $mtOffsets[$classId];
+
+                                            echo
+                                            "<div class='classSlot $classDays' style='margin-top: $marginTop" . "px'>
+                                                <h3>$courseAbbr $courseNum</h3>
+                                                <p>$stFormatted - $etFormatted</p>
+                                            </div>";
+                                        }
+                                    }
+                                }
+                            ?>
                         </div>
                         <div class="thuClasses">
-                            <div id="BY101Slot" class="classSlot tr">
-                                <h3>BY 101</h3>
-                                <p>8:45AM - 10:15AM</p>
-                            </div>
-                            <div id="CS115Slot" class="classSlot tr">
-                                <h3>CS 115</h3>
-                                <p>12:15PM - 1:45PM</p>
-                            </div>
+                            <?php
+                                $classes = $student->getClasses();
+                                usort($classes, "stuClassSTSort");
+                                if(count($classes) > 0 && $registered){
+                                    foreach($classes as $stuClass){
+                                        $classDays = strtolower($stuClass->getActiveDays());
+                                        if($classDays === "tr"){
+                                            $classId = $stuClass->getId();
+                                            $course = $stuClass->getCourse();
+                                            $courseAbbr = $course->getAbbreviation();
+                                            $courseNum = $course->getCourseNumber();
+                                            $stTimestamp = $stuClass->getStartTime();
+                                            $etTimestamp = $stuClass->getEndTime();
+                                            $dateTimeImmutable = new DateTimeImmutable();
+                                            $stFormatted = $dateTimeImmutable->setTimestamp($stTimestamp)->format('g:i A');
+                                            $etFormatted = $dateTimeImmutable->setTimestamp($etTimestamp)->format('g:i A');
+                                            $marginTop = $mtOffsets[$classId];
+
+                                            echo
+                                            "<div class='classSlot $classDays' style='margin-top: $marginTop" . "px'>
+                                                <h3>$courseAbbr $courseNum</h3>
+                                                <p>$stFormatted - $etFormatted</p>
+                                            </div>";
+                                        }
+                                    }
+                                }
+                            ?>
                         </div>
                         <div class="friClasses">
-                            <div id="MS101Slot" class="classSlot mwf">
-                                <h3>MS 101</h3>
-                                <p>8:15AM - 9:15AM</p>
-                            </div>
-                            <div id="CS101Slot" class="classSlot mwf">
-                                <h3>CS 101</h3>
-                                <p>9:30AM - 10:30AM</p>
-                            </div>
+                            <?php
+                                $classes = $student->getClasses();
+                                usort($classes, "stuClassSTSort");
+                                if(count($classes) > 0 && $registered){
+                                    foreach($classes as $stuClass){
+                                        $classDays = strtolower($stuClass->getActiveDays());
+                                        if($classDays === "mwf"){
+                                            $classId = $stuClass->getId();
+                                            $course = $stuClass->getCourse();
+                                            $courseAbbr = $course->getAbbreviation();
+                                            $courseNum = $course->getCourseNumber();
+                                            $stTimestamp = $stuClass->getStartTime();
+                                            $etTimestamp = $stuClass->getEndTime();
+                                            $dateTimeImmutable = new DateTimeImmutable();
+                                            $stFormatted = $dateTimeImmutable->setTimestamp($stTimestamp)->format('g:i A');
+                                            $etFormatted = $dateTimeImmutable->setTimestamp($etTimestamp)->format('g:i A');
+                                            $marginTop = $mtOffsets[$classId];
+
+                                            echo
+                                            "<div class='classSlot $classDays' style='margin-top: $marginTop" . "px'>
+                                                <h3>$courseAbbr $courseNum</h3>
+                                                <p>$stFormatted - $etFormatted</p>
+                                            </div>";
+                                        }
+                                    }
+                                }
+                            ?>
                         </div>
                     </div>
                 </div>

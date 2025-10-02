@@ -746,3 +746,55 @@ function registerStudent($conn) {
         mysqli_stmt_close($stmt);
     }
 }
+
+// returns the hour and minutes of a class given a timestamp
+function getClassHourAndMinute($ts){
+    $dateTimeImmutable = new DateTimeImmutable();
+    $timeFormatted = $dateTimeImmutable->setTimestamp($ts)->format('H:i');
+    $hourAndMinute = explode(":", $timeFormatted);
+    $hourAndMinute[0] = (int)$hourAndMinute[0];
+    $hourAndMinute[1] = (int)$hourAndMinute[1];
+
+    return $hourAndMinute;
+}
+
+// returns the start and end position of a class given the hour and minutes
+function getClassStartAndEndPos($stArr, $etArr){
+    $stPos = $stArr[0] * 100 + ($stArr[1] / 60) * 100;
+    $etPos = $etArr[0] * 100 + ($etArr[1] / 60) * 100;
+
+    return array($stPos, $etPos);
+}
+
+// sort array of maps in ascending order based on "startTimePos"
+function stPosSort($a, $b){
+    if($a["startTimePos"] === $b["startTimePos"]) return 0;
+    return ($a["startTimePos"] < $b["startTimePos"]) ? -1 : 1;
+}
+
+// sort student classes in ascending order based on start time 
+function stuClassSTSort($a, $b){
+    if($a->getStartTime() === $b->getStartTime()) return 0;
+    return ($a->getStartTime() < $b->getStartTime()) ? -1 : 1;
+}
+
+// get margin top offsets for each class div 
+function getMarginTopOffsets($classPositions){
+    if(count($classPositions) < 1) return array();
+    $result = array($classPositions[0]["startTimePos"]);
+    for($i=1; $i<count($classPositions); $i++){
+        array_push($result, $classPositions[$i]["startTimePos"] - $classPositions[$i-1]["endTimePos"]);
+    }
+    
+    return $result;
+}
+
+// set margin top offsets for each class map (return false if classPositions is empty)
+function setMarginTopOffsets(&$classPositions){
+    if(count($classPositions) < 1) return false;
+
+    $classPositions[0]["mtOffset"] = $classPositions[0]["startTimePos"];
+    for($i=1; $i<count($classPositions); $i++){
+        $classPositions[$i]["mtOffset"] = $classPositions[$i]["startTimePos"] - $classPositions[$i-1]["endTimePos"];
+    }
+}

@@ -101,6 +101,17 @@ if(isset($_POST["submit"])) {
 
     $classId = $classRow["classesId"];
     $courseId = $classRow["classesCourseId"]; // Gets course id from class record
+
+    // Determine if the user is adding a duplicate course
+    if(count($currCartClasses) > 0){
+        foreach($currCartClasses as $cartClass){
+            $currCartClassCourseId = $cartClass->getCourse()->getId();
+            if($currCartClassCourseId === $courseId){
+                header("location: ../profile/planner2.php?error=coursealreadyincart");
+                exit();
+            }
+        }
+    }
     
     // Use course id to find course in database
     $courseRow = findCourseById($conn, $courseId);

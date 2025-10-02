@@ -671,22 +671,6 @@ body {
     height: 150px;
 }
 
-#BY101Slot{
-    margin-top: 875px;
-}
-
-#MS101Slot{
-    margin-top: 825px;
-}
-
-#CS101Slot{
-    margin-top: 25px;
-}
-
-#CS115Slot{
-    margin-top: 200px;
-}
-
 .scheduleDiv .monClasses{
     display: block;
 }

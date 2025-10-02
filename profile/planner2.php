@@ -39,6 +39,9 @@
                             elseif($_GET["error"] === "classalreadyincart") {
                                 echo "<script>alert('This class is already in your cart. Try adding another one.');</script>";
                             }
+                            elseif($_GET["error"] === "coursealreadyincart") {
+                                echo "<script>alert('This course is already in your cart. Try adding a different one.');</script>";
+                            }
                             elseif($_GET["error"] === "classinterference") {
                                 echo "<script>alert('This class inteferes with another class in your cart. Try adding another one or removing a class from your cart.');</script>";
                             }
