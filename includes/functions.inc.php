@@ -774,8 +774,12 @@ function stPosSort($a, $b){
 
 // sort student classes in ascending order based on start time 
 function stuClassSTSort($a, $b){
-    if($a->getStartTime() === $b->getStartTime()) return 0;
-    return ($a->getStartTime() < $b->getStartTime()) ? -1 : 1;
+    $dateTimeImmutable = new DateTimeImmutable();
+    $aFormatted = $dateTimeImmutable->setTimestamp($a->getStartTime())->format('H:i');
+    $bFormatted = $dateTimeImmutable->setTimestamp($b->getStartTime())->format('H:i');
+
+    if($aFormatted === $bFormatted) return 0;
+    return ($aFormatted < $bFormatted) ? -1 : 1;
 }
 
 // get margin top offsets for each class div 

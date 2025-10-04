@@ -5,6 +5,7 @@
     $mwfPositions = array();
     $trPositions = array();
 
+    // calculate start time position and end time position for each class
     $classes = $student->getClasses();
     foreach($classes as $stuClass){
         if($stuClass->getType() !== "ONL"){
@@ -30,12 +31,15 @@
         }
     }
 
+    // sort classes by start time position
     usort($mwfPositions, "stPosSort");
     usort($trPositions, "stPosSort");
 
+    // set margin-top style for each class slot
     setMarginTopOffsets($mwfPositions);
     setMarginTopOffsets($trPositions);
 
+    // map each class id to its margin-top property
     $mtOffsets = array();
     foreach($mwfPositions as $mwfPos){
         $mtOffsets[$mwfPos["classId"]] = $mwfPos["mtOffset"];
@@ -85,7 +89,7 @@
                         <div class="monClasses">
                             <?php
                                 $classes = $student->getClasses();
-                                usort($classes, "stuClassSTSort");
+                                usort($classes, "stuClassSTSort"); // sort classes in ascending order by start time
                                 if(count($classes) > 0 && $registered){
                                     foreach($classes as $stuClass){
                                         $classDays = strtolower($stuClass->getActiveDays());
@@ -97,8 +101,11 @@
                                             $stTimestamp = $stuClass->getStartTime();
                                             $etTimestamp = $stuClass->getEndTime();
                                             $dateTimeImmutable = new DateTimeImmutable();
+
+                                            // give start and end times 12-hour format with no leading zeros for hours
                                             $stFormatted = $dateTimeImmutable->setTimestamp($stTimestamp)->format('g:i A');
                                             $etFormatted = $dateTimeImmutable->setTimestamp($etTimestamp)->format('g:i A');
+
                                             $marginTop = $mtOffsets[$classId];
 
                                             echo
