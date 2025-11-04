@@ -27,4 +27,4 @@ else{
 
 // Register student
 registerStudent($conn);
-header("location: ../profile/planner.php?success=registeringclasses");
+header("location: ../profile/planner.php?success=registeredclasses");

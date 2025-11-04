@@ -10,8 +10,8 @@
                             if($_GET["success"] === "removedclassfromcart") {
                                 echo "<script>alert('Class successfully removed!');</script>";
                             }
-                            elseif($_GET["success"] === "registeringclasses") {
-                                echo "<script>alert('Registering classes...');</script>";
+                            elseif($_GET["success"] === "registeredclasses") {
+                                echo "<script>alert('Classes successfully registered!');</script>";
                             }
                         }
 
@@ -68,7 +68,12 @@
                     <div id="cartContainer">
                         <div id="coursesCart">
                             <div class="cartHeading">
-                                <p class="cartTitle">Course Cart</p>
+                                <p class="cartTitle">
+                                    <?php
+                                        if($registered) echo "Registered Classes";
+                                        else echo "Course Cart"; 
+                                    ?>
+                                </p>
                                 <div class="status">
                                     <?php
                                         if(!$registered){
