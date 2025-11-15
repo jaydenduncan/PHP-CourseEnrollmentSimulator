@@ -1,0 +1,28 @@
+<?php 
+    require_once 'sidebar.php'
+?>
+
+                <div class="helpMenu">
+                    <div class="hm menu_planner">
+                        <div class="menu_desc menu_planner_desc">
+                            <h2>Planner</h2>
+                            <p>See how to add classes to your cart on planner tab</p>
+                        </div>
+                    </div>
+                    <div class="hm menu_schedule">
+                        <div class="menu_desc menu_schedule_desc">
+                            <h2>Schedule</h2>
+                            <p>Learn what the schedule tab is used for and how it helps users view their schedule</p>
+                        </div>
+                    </div>
+                    <div class="hm menu_settings">
+                        <div class="menu_desc menu_settings_desc">
+                            <h2>Settings</h2>
+                            <p>See how the settings tab allows a user to change their account information or password</p>
+                        </div>
+                    </div>
+                </div>
+
+<?php
+    require_once 'footer.php';
+?>

@@ -81,7 +81,7 @@
                         $planner4Link = "/" . $uri . "/profile/planner4.php";
                         $scheduleLink = "/" . $uri . "/profile/schedule.php";
                         $settingsLink = "/" . $uri . "/profile/settings.php";
-                        $helpLink = "/" . $uri . "/profile/help.php";
+                        $helpLink = "/" . $uri . "/profile/help_main.php";
                         if(isset($_SERVER["SCRIPT_NAME"])) {
                             $currentPage = $_SERVER["SCRIPT_NAME"];
 
@@ -91,7 +91,7 @@
                                 <li class='selected'><a href='planner.php'><i class='fas fa-clipboard-list'></i>Planner</a></li>
                                 <li><a href='schedule.php'><i class='fas fa-calendar-alt'></i>Schedule</a></li>
                                 <li><a href='settings.php'><i class='fas fa-cog'></i>Settings</a></li>
-                                <li><a href='help.php'><i class='fas fa-question'></i>Help</a></li>
+                                <li><a href='help_main.php'><i class='fas fa-question'></i>Help</a></li>
                                 ";
                             }
                             elseif($currentPage === $scheduleLink) {
@@ -100,7 +100,7 @@
                                 <li><a href='planner.php'><i class='fas fa-clipboard-list'></i>Planner</a></li>
                                 <li class='selected'><a href='schedule.php'><i class='fas fa-calendar-alt'></i>Schedule</a></li>
                                 <li><a href='settings.php'><i class='fas fa-cog'></i>Settings</a></li>
-                                <li><a href='help.php'><i class='fas fa-question'></i>Help</a></li>
+                                <li><a href='help_main.php'><i class='fas fa-question'></i>Help</a></li>
                                 ";
                             }
                             elseif($currentPage === $settingsLink) {
@@ -109,7 +109,7 @@
                                 <li><a href='planner.php'><i class='fas fa-clipboard-list'></i>Planner</a></li>
                                 <li><a href='schedule.php'><i class='fas fa-calendar-alt'></i>Schedule</a></li>
                                 <li class='selected'><a href='settings.php'><i class='fas fa-cog'></i>Settings</a></li>
-                                <li><a href='help.php'><i class='fas fa-question'></i>Help</a></li>
+                                <li><a href='help_main.php'><i class='fas fa-question'></i>Help</a></li>
                                 ";
                             }
                             elseif($currentPage === $helpLink) {
@@ -118,7 +118,7 @@
                                 <li><a href='planner.php'><i class='fas fa-clipboard-list'></i>Planner</a></li>
                                 <li><a href='schedule.php'><i class='fas fa-calendar-alt'></i>Schedule</a></li>
                                 <li><a href='settings.php'><i class='fas fa-cog'></i>Settings</a></li>
-                                <li class='selected'><a href='help.php'><i class='fas fa-question'></i>Help</a></li>
+                                <li class='selected'><a href='help_main.php'><i class='fas fa-question'></i>Help</a></li>
                                 ";
                             }
                         }
