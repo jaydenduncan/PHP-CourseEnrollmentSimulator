@@ -81,7 +81,11 @@
                         $planner4Link = "/" . $uri . "/profile/planner4.php";
                         $scheduleLink = "/" . $uri . "/profile/schedule.php";
                         $settingsLink = "/" . $uri . "/profile/settings.php";
-                        $helpLink = "/" . $uri . "/profile/help_main.php";
+                        $helpLink1 = "/" . $uri . "/profile/help_main.php";
+                        $helpLink2 = "/" . $uri . "/profile/help_planner.php";
+                        $helpLink3 = "/" . $uri . "/profile/help_schedule.php";
+                        $helpLink4 = "/" . $uri . "/profile/help_settings.php";
+
                         if(isset($_SERVER["SCRIPT_NAME"])) {
                             $currentPage = $_SERVER["SCRIPT_NAME"];
 
@@ -112,7 +116,7 @@
                                 <li><a href='help_main.php'><i class='fas fa-question'></i>Help</a></li>
                                 ";
                             }
-                            elseif($currentPage === $helpLink) {
+                            elseif($currentPage === $helpLink1 || $currentPage === $helpLink2 || $currentPage === $helpLink3 || $currentPage === $helpLink4 ) {
                                 echo 
                                 "
                                 <li><a href='planner.php'><i class='fas fa-clipboard-list'></i>Planner</a></li>

@@ -728,15 +728,39 @@ body {
     height: 100px;
     width: 100%;
     position: absolute;
-    top: 50%;
+    top: 30%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
 
+.helpMenu div .menu_desc i{
+    font-size: 75px;
+    margin-bottom: 20px;
+}
+
 .helpMenu div .menu_desc p{
-    background-color: #c9c8c3;
     height: 100%;
     padding: 10px;
     margin-top: 10px;
     opacity: 0.7;
+}
+
+.helpMenu a{
+    color: #000000;
+}
+
+/* help subpages styles */
+.faqs{
+    height: 90vh;
+    width: 60vw;
+    background-color: #ebebeb;
+    border-radius: 15px;
+    margin: 35px auto;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.faqs h2{
+    margin-top: 25px;
+    text-decoration: underline;
 }
