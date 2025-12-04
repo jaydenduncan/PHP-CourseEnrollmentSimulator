@@ -34,6 +34,10 @@ body {
     font-size: 25px;
 }
 
+#logoutLink:visited{
+    color: #0000EE;
+}
+
 /* ************************* */
 
 .wrapper .sidebar .profileImg{
@@ -760,7 +764,64 @@ body {
     justify-content: space-evenly;
 }
 
+.faqs .plannerFAQBody{
+    display: block;
+}
+
 .faqs h2{
     margin-top: 25px;
     text-decoration: underline;
+    text-align: center;
+}
+
+.faqs ul{
+    margin-top: 25px;
+    color: #0000EE;
+}
+
+.faqs ul li{
+    list-style-type: disc;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+.faqs ul li:hover{
+    color: #63635d;
+}
+
+.faqs ul li p:hover{
+    color: #63635d;
+}
+
+.faq_answer{
+    position: absolute;
+    height: 350px;
+    width: 500px;
+    background-color: white;
+    border: 4px solid black;
+    border-radius: 15px;
+    padding: 30px;
+    display: none;
+}
+
+.faq_answer .fa-x{
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 10px 20px;
+    cursor: pointer;
+    opacity: 0.4;
+}
+
+.faq_answer p{
+    padding: 10px;
+}
+
+.faq_answer p::before{
+    content: "-  ";
+}
+
+#planner_faq_answer_1{
+    left: 40%;
+    top: 25%;
 }

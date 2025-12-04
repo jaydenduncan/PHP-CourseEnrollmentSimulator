@@ -31,3 +31,20 @@ $(document).ready(function(){
     $("#scheduleDiv").scrollTop(minStartHour * 100); // scroll schedule div to top of minimum start hour
 }
 );
+
+// Display faq answer to the user
+function faq_handler(target_id){
+    let vals = target_id.split("_");
+    let answer_id = vals[0] + "_faq_answer_" + vals[vals.length-1];
+    let answerDiv = document.getElementById(answer_id);
+    answerDiv.style.display = "block";
+}
+
+// Close faq answer
+function faq_close(){
+    let faq_answers = document.getElementsByClassName("faq_answer");
+
+    for(let i=0; i<faq_answers.length; i++){
+        faq_answers[i].style.display = "none";
+    }
+}
