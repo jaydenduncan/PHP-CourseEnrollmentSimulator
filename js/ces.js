@@ -36,6 +36,9 @@ let active_faq_answer_id = ""; // holds id of the currently open faq answer
 
 // Display faq answer to the user
 function faq_handler(target_id){
+    if(active_faq_answer_id){
+        faq_close();
+    }
     let vals = target_id.split("_");
     let answer_id = vals[0] + "_faq_answer_" + vals[vals.length-1];
     let answerDiv = document.getElementById(answer_id);
@@ -47,4 +50,5 @@ function faq_handler(target_id){
 function faq_close(){
     let faq_answer = document.getElementById(active_faq_answer_id);
     faq_answer.style.display = "none";
+    active_faq_answer_id = "";
 }

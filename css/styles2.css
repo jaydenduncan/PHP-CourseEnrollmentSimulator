@@ -774,29 +774,40 @@ body {
     text-align: center;
 }
 
-.faqs ul{
+.faqs .plannerFAQLinks{
     margin-top: 25px;
     color: #0000EE;
 }
 
+.faqs .plannerFAQLinks li{
+    cursor: pointer;
+    padding: 10px;
+    font-size: 17px;
+}
+
+.faqs .plannerFAQLinks li:hover{
+    color: #63635d;
+}
+
+.faqs .plannerFAQLinks li p:hover{
+    color: #63635d;
+}
+
 .faqs ul li{
     list-style-type: disc;
-    font-size: 17px;
-    cursor: pointer;
 }
 
-.faqs ul li:hover{
-    color: #63635d;
-}
-
-.faqs ul li p:hover{
-    color: #63635d;
+.faqs ol li{
+    list-style-type: decimal;
 }
 
 .faq_answer{
     position: absolute;
-    height: 350px;
+    left: 40%;
+    top: 25%;
+    max-height: 350px;
     width: 500px;
+    overflow-y: scroll;
     background-color: white;
     border: 4px solid black;
     border-radius: 15px;
@@ -813,15 +824,21 @@ body {
     opacity: 0.4;
 }
 
+.faq_answer h3{
+    text-align: center;
+    margin-bottom: 20px;
+}
+
 .faq_answer p{
     padding: 10px;
 }
 
-.faq_answer p::before{
-    content: "-  ";
+.faq_answer ol li{
+    padding: 5px;
+    margin-left: 10%;
 }
 
-#planner_faq_answer_1{
-    left: 40%;
-    top: 25%;
+.faq_answer ul li{
+    padding: 5px;
+    margin-left: 10%;
 }
