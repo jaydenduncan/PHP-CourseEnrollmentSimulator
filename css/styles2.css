@@ -768,6 +768,21 @@ body {
     display: block;
 }
 
+.faqs .backBtn{
+    position: relative;
+    left: -40%;
+    top: 25%;
+    background-color: #0f149a;
+    border: 0px;
+    border-radius: 7px;
+    color: #ffffff;
+    font-size: 20px;
+    cursor: pointer;
+    height: 40px;
+    width: 125px;
+    margin-top: 75px;
+}
+
 .faqs h2{
     margin-top: 25px;
     text-decoration: underline;

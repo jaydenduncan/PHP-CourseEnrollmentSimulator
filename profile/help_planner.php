@@ -13,6 +13,7 @@
                             <li><p id="planner_faq_5" onclick="faq_handler(this.id)">How do I delete a class from my cart?</p></li>
                             <li><p id="planner_faq_6" onclick="faq_handler(this.id)">Why is the 'Register' button missing from my planner?</p></li>
                         </ul>
+                        <a href="help_main.php"><button class="backBtn">Back</button></a>
                         <div id="planner_faq_answer_1" class="faq_answer">
                             <i class="fa-solid fa-x" onclick="faq_close()"></i>
                             <h3>FAQ: How do I add a course to my cart?</h3>
