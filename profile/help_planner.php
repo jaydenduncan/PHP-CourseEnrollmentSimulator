@@ -3,9 +3,9 @@
 ?>
 
                 <div class="faqs plannerFAQs">
-                    <div class="plannerFAQBody">
+                    <div class="faqBody plannerFAQBody">
                         <h2 class="plannerFAQHeader">FAQs</h2>
-                        <ul class="plannerFAQLinks">
+                        <ul class="faqLinks plannerFAQLinks">
                             <li><p id="planner_faq_1" onclick="faq_handler(this.id)">How do I add a course to my cart?</p></li>
                             <li><p id="planner_faq_2" onclick="faq_handler(this.id)">Why is a class failing to add to my cart?</p></li>
                             <li><p id="planner_faq_3" onclick="faq_handler(this.id)">Why am I getting an empty input error?</p></li>
@@ -17,7 +17,7 @@
                         <div id="planner_faq_answer_1" class="faq_answer">
                             <i class="fa-solid fa-x" onclick="faq_close()"></i>
                             <h3>FAQ: How do I add a course to my cart?</h3>
-                            To add a course to your cart your should do the following:
+                            <p>To add a course to your cart your should do the following:</p>
                             <ol>
                                 <li>Click on the 'Planner' tab.</li>
                                 <li>Click 'Add Course' at the top of the page.</li>

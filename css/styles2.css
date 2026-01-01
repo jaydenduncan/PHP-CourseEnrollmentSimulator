@@ -764,14 +764,16 @@ body {
     justify-content: space-evenly;
 }
 
-.faqs .plannerFAQBody{
+.faqs .faqBody{
+    position: relative;
     display: block;
+    width: 100%;
 }
 
 .faqs .backBtn{
-    position: relative;
-    left: -40%;
-    top: 25%;
+    position: absolute;
+    left: 10%;
+    top: 70%;
     background-color: #0f149a;
     border: 0px;
     border-radius: 7px;
@@ -789,22 +791,23 @@ body {
     text-align: center;
 }
 
-.faqs .plannerFAQLinks{
-    margin-top: 25px;
-    color: #0000EE;
+.faqs .faqLinks{
+    margin-top: 2%;
+    margin-left: 35%;
 }
 
-.faqs .plannerFAQLinks li{
+.faqs .faqLinks li{
+    color: #0000EE;
     cursor: pointer;
     padding: 10px;
     font-size: 17px;
 }
 
-.faqs .plannerFAQLinks li:hover{
+.faqs .faqLinks li:hover{
     color: #63635d;
 }
 
-.faqs .plannerFAQLinks li p:hover{
+.faqs .faqLinks li p:hover{
     color: #63635d;
 }
 
@@ -818,7 +821,7 @@ body {
 
 .faq_answer{
     position: absolute;
-    left: 40%;
+    left: 25%;
     top: 25%;
     max-height: 350px;
     width: 500px;
