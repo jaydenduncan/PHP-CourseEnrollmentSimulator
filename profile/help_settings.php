@@ -12,7 +12,7 @@
                         <a href="help_main.php"><button class="backBtn">Back</button></a>
                         <div id="settings_faq_answer_1" class="faq_answer">
                             <i class="fa-solid fa-x" onclick="faq_close()"></i>
-                            <h3>FAQ: How can I change my account information?</h3>
+                            <h3>How can I change my account information?</h3>
                             <p>To change your account information, head to the 'Settings' tab and type in the text boxes 
                                 the information you want to change. After you type the info you want changed, press
                                 'Update Information'.
@@ -27,7 +27,7 @@
                         </div>
                         <div id="settings_faq_answer_2" class="faq_answer">
                             <i class="fa-solid fa-x" onclick="faq_close()"></i>
-                            <h3>FAQ: Why am I getting an error message when changing my account information?</h3>
+                            <h3>Why am I getting an error message when changing my account information?</h3>
                             <p>You might receive an error when changing your account information if:</p>
                             <ul>
                                 <li>The information you entered is invalid (contains invalid characters, improper spacing, no '@' symbol for the email, etc.).</li>

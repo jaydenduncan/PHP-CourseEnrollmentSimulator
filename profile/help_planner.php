@@ -16,7 +16,7 @@
                         <a href="help_main.php"><button class="backBtn">Back</button></a>
                         <div id="planner_faq_answer_1" class="faq_answer">
                             <i class="fa-solid fa-x" onclick="faq_close()"></i>
-                            <h3>FAQ: How do I add a course to my cart?</h3>
+                            <h3>How do I add a course to my cart?</h3>
                             <p>To add a course to your cart your should do the following:</p>
                             <ol>
                                 <li>Click on the 'Planner' tab.</li>
@@ -29,7 +29,7 @@
                         </div>
                         <div id="planner_faq_answer_2" class="faq_answer">
                             <i class="fa-solid fa-x" onclick="faq_close()"></i>
-                            <h3>FAQ: Why is a class failing to add to my cart?</h3>
+                            <h3>Why is a class failing to add to my cart?</h3>
                             <p>If a class is not being succesfully added to your cart, it could be for various reasons:</p>
                             <ul>
                                 <li>You are not choosing a valid option on a subpage (See FAQ 3).</li>
@@ -42,7 +42,7 @@
                         </div>
                         <div id="planner_faq_answer_3" class="faq_answer">
                             <i class="fa-solid fa-x" onclick="faq_close()"></i>
-                            <h3>FAQ: Why am I getting an empty input error?</h3>
+                            <h3>Why am I getting an empty input error?</h3>
                             <p>When adding a class to your cart, make sure to select a valid option on each subpage of the planner.
                                 For selections that have a long list of available options, you can also scroll through to select the 
                                 best option for you.
@@ -50,7 +50,7 @@
                         </div>
                         <div id="planner_faq_answer_4" class="faq_answer">
                             <i class="fa-solid fa-x" onclick="faq_close()"></i>
-                            <h3>FAQ: How are the course classes categorized?</h3>
+                            <h3>How are the course classes categorized?</h3>
                             <p>Each course will have classes with the following information given in your cart:</p>
                             <ul>
                                 <li>Section Number</li>
@@ -71,14 +71,14 @@
                         </div>
                         <div id="planner_faq_answer_5" class="faq_answer">
                             <i class="fa-solid fa-x" onclick="faq_close()"></i>
-                            <h3>FAQ: How do I delete a class from my cart?</h3>
+                            <h3>How do I delete a class from my cart?</h3>
                             <p>To delete a class that your have added to your cart just head to the 'Planner' tab and press
                                 the trash can icon in the lower right corner of the class slot.
                             </p>
                         </div>
                         <div id="planner_faq_answer_6" class="faq_answer">
                             <i class="fa-solid fa-x" onclick="faq_close()"></i>
-                            <h3>FAQ: Why is the 'Register' button missing from my planner?</h3>
+                            <h3>Why is the 'Register' button missing from my planner?</h3>
                             <p>Once you gather all of the classes you want in your cart and press the 'Register' button, 
                                 you will notice that it disappears from the screen. Your schedule will be officially set 
                                 from the pool of classes in your cart. The only way to reverse your registered classes
