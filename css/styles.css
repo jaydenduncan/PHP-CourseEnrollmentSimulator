@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 body {
-	background-color: #0f149a;
+	background-image: url('../img/SchoolSuppliesBGImage.jpg');
 }
 
 main {
@@ -29,6 +29,8 @@ main {
 img{
 	margin-right: 65%;
 	margin-top: 2px;
+	height: 75px;
+	width: 75px;
 }
 
 ul{
@@ -38,7 +40,7 @@ ul{
 
 a, li {
 	display: inline;
-	color: #FFFFFF;
+	color: #000000;
 	padding: 0px 5px;
 	text-decoration: none;
 }
@@ -52,18 +54,29 @@ a:hover{
 	left: 0px;
 	top: 0px;
 	height: 5%;
-    background-color: #fd9b4d;
     width: 100%;
     display: flex;
     justify-content: center;
 	font-family: 'Roboto', sans-serif;
 	margin-bottom: 0%;
+	opacity: 0.8;
+}
+
+.titleContainer{
+	position: absolute;
+	width: 50%;
+	height: 50%;
+	background-color: #000000;
+	top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+	text-align: center;
+	opacity: 0.8;
 }
 
 .title {
 	padding-top: 10px;
-	color: white;
-	text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+	color: #23d8fc;
 	font-size: 70px;
 	font-family: 'Merriweather';
 	display: flex;
@@ -71,66 +84,13 @@ a:hover{
 }
 
 .desc {
-	color: white;
+	color: #23d8fc;
 	padding-top: 10px;
 	margin-top: 2%;
 	display: flex;
 	justify-content: center;
 	font-family: 'Merriweather';
-	font-size: 40px;
-}
-
-#subDesc {
-	color: white;
-	padding-top: 0px;
-	margin-top: 10%;
-	display: flex;
-	justify-content: center;
-	font-family: 'Merriweather';
-	font-size: 40px;
-}
-
-#downloadContent {
-	height: 175px;
-	width: 100%;
-}
-
-#downloadContent p {
-	color: white;
-	display: flex;
-	justify-content: center;
-	font-size: 15px;
-	margin-top: 15%;
-}
-
-#downloadContent div {
-	position: absolute;
-	background-color: #fd9b4d;
-	margin-top: 100px;
-	left: 38%;
-	top: 40%;
-	height: 12%;
-	width: 25%;
-	display: flex;
-	justify-content: left;
-	opacity: 0.8;
-}
-
-#downloadDiv p {
-	display: inline;
-	flex: 0 0 70%;
-	margin-top: 12px;
-	margin-bottom: 9px;
-	margin-right: 35px;
-	margin-left: 10px;
-	font-size: 29px;
-	transform: translateY(30%);
-}
-
-#downloadDiv img {
-	display: inline;
-	margin-top: 10px;
-	transform: translateY(60%);
+	font-size: 30px;
 }
 
 /* Footer Styles */
@@ -139,12 +99,13 @@ a:hover{
 	left: 0px;
 	top: 100%;
 	height: 25%;
-    background-color: #fd9b4d;
+	background-color: #23d8fc;
     width: 100%;
     display: flex;
     justify-content: center;
 	font-family: 'Roboto', sans-serif;
 	font-size: 2px;
+	opacity: 0.8;
 }
 
 .wrapper3 ul {
@@ -214,13 +175,14 @@ a:hover{
 }
 
 .signupFormDiv {
-	border: 3px solid black;
 	display: flex;
 	justify-content: center;
 	background-color: white;
 	width: 45%;
 	height: 450px;
 	border-radius: 10px;
+	opacity: 0.9;
+	box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
 }
 
 .signupFormSub {
@@ -266,13 +228,14 @@ a:hover{
 }
 
 .loginFormDiv {
-	border: 3px solid black;
 	display: flex;
 	justify-content: center;
 	background-color: white;
 	width: 45%;
 	height: 300px;
 	border-radius: 10px;
+	opacity: 0.9;
+	box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
 }
 
 .loginFormSub1 {
