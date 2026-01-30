@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 body {
-	background-image: url('../img/SchoolSuppliesBGImage.jpg');
+	background-image: url('../img/BGImage4.jpg');
 }
 
 main {
@@ -26,16 +26,106 @@ main {
 	font-family: 'Roboto', sans-serif;
 }
 
-img{
+.wrapper .appLogo{
 	margin-right: 65%;
 	margin-top: 2px;
 	height: 75px;
 	width: 75px;
 }
 
-ul{
+.hamburger {
+	display: none;
+	padding: 15px;
+	cursor: pointer;
+	transition: all 0.25s ease-in-out;
+	/* Remove default button styles */
+	background-color: transparent;
+	border: 0;
+	outline: none; 
+}
+
+.hamburger-box {
+	width: 40px;
+	height: 24px;
+	display: inline-block;
+	position: relative;
+}
+
+.hamburger-inner {
+	display: block;
+	top: 50%;
+	margin-top: -2px; /* Half of bar height */
+}
+
+.hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
+	width: 40px;
+	height: 4px;
+	background-color: #000; /* Black bars */
+	border-radius: 4px;
+	position: absolute;
+	transition: transform .25s ease-in-out, opacity .25s ease-in-out;
+}
+
+/* Position the pseudo-elements */
+.hamburger-inner::before, .hamburger-inner::after {
+	content: "";
+  	left: 0;
+}
+
+.hamburger-inner::before {
+	top: -10px; /* Adjust as needed for spacing */
+}
+
+.hamburger-inner::after {
+	top: 10px; /* Adjust as needed for spacing */
+}
+
+/* Rotate the middle bar to form the first part of the 'X' */
+.hamburger.is-active .hamburger-inner {
+	transform: rotate(45deg);
+}
+
+/* Hide the top bar and position it at the center */
+.hamburger.is-active .hamburger-inner::before {
+	top: 0;
+  	opacity: 0; /* Fade out the top bar */
+}
+
+/* Hide the bottom bar and position it at the center, then rotate to complete the 'X' */
+.hamburger.is-active .hamburger-inner::after {
+	top: 0;
+  	transform: rotate(-90deg); /* Rotate the bottom bar to form the other half of the 'X' */
+}
+
+.mainLinks{
+	display: block;
 	padding-left: 50px;
 	font-size: 15px;
+}
+
+.mobileLinks{
+	display: none;
+	position: absolute;
+	flex-direction: column;
+	justify-content: center;
+	top: 5vh;
+	right: 9vw;
+	height: 20vh;
+	width: auto;
+}
+
+.mobileLinks.is-active{
+	display: flex;
+}
+
+.mobileLinks li{
+	display: flex;
+	align-items: center;
+	height: 100vh;
+	width: 20vw;
+	border: 1px solid black;
+	background-color: white;
+	font-size: 18px;
 }
 
 a, li {
@@ -65,7 +155,7 @@ a:hover{
 .titleContainer{
 	position: absolute;
 	width: 50%;
-	height: 50%;
+	height: auto;
 	background-color: #000000;
 	top: 50%;
     left: 50%;
@@ -104,7 +194,7 @@ a:hover{
     display: flex;
     justify-content: center;
 	font-family: 'Roboto', sans-serif;
-	font-size: 2px;
+	font-size: 15px;
 	opacity: 0.8;
 }
 
@@ -242,12 +332,6 @@ a:hover{
 	margin-top: 20px;
 }
 
-.loginFormSub1 a {
-	display: inline;
-	color: blue;
-	font-size: 14px;
-}
-
 .loginFormSub2 {
 	margin-top: 10px;
 }
@@ -298,3 +382,74 @@ input {
 	font-size: 15px;
 }
 
+
+@media screen and (max-width: 1000px) {
+	.wrapper .appLogo{
+		margin-right: 55%;
+		height: 50px;
+		width: 50px;
+	}
+
+	.title{
+		font-size: 50px;
+	}
+
+	.desc{
+		font-size: 20px;
+	}
+}
+
+@media screen and (max-width: 700px) {
+	.wrapper .appLogo{
+		margin-right: 35%;
+	}
+
+	.wrapper3 {
+		display: none;
+	}
+
+	.titleContainer{
+		width: 60%;
+	}
+
+	.title{
+		font-size: 40px;
+	}
+	
+	.desc{
+		font-size: 15px;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.wrapper .appLogo{
+		margin-right: 50%;
+		margin-left: 10%;
+	}
+
+	.mainLinks{
+		display: none;
+	}
+
+	.hamburger{
+		display: block;
+	}
+
+	.titleContainer{
+		width: 70%;
+	}
+
+	.title{
+		font-size: 32px;
+	}
+	
+	.desc{
+		font-size: 10px;
+	}
+}
+
+@media screen and (max-width: 400px) {
+	.mobileLinks li{
+		font-size: 13px;
+	}
+}

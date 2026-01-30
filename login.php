@@ -8,7 +8,7 @@
                             <input type="text" id="studentsUid" name="studentsUid" placeholder="Student Email or Student Number"/>
                             <input type="password" id="studentsPwd" name="studentsPwd" placeholder="Password"/>
                             <div class="loginFormSub1">
-                                <a href="resetpwd.php">Forgot Password?</a>
+                                
                             </div>
                             <button type="submit" name="submit">Login</button>
                             <div class="loginFormSub2">
