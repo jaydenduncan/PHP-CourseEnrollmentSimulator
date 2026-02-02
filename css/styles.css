@@ -2,35 +2,37 @@
 
 body {
 	background-image: url('../img/BGImage4.jpg');
+	height: 100vh;
+}
+
+nav{
+	display: flex;
+	position: relative;
+	width: 100%;
+	height: 10vh;
+	z-index: 999;
 }
 
 main {
-	margin-top: 5%;
+	height: 88vh;
 }
 
-.signupForm p{
-	display: block;
-	margin-top: 0px;
-	padding-top: 20px;
-	padding-bottom: 50px;
-	color: red;
+.wrapper {
+	position: relative;
+	height: 100%;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	font-family: 'Roboto', sans-serif;
-}
-
-.loginForm p {
-	display: block;
-	margin-top: 0px;
-	padding-top: 20px;
-	padding-bottom: 50px;
-	color: red;
-	font-family: 'Roboto', sans-serif;
+	opacity: 0.8;
 }
 
 .wrapper .appLogo{
 	margin-right: 65%;
-	margin-top: 2px;
-	height: 75px;
-	width: 75px;
+	margin-top: 5px;
+	max-height: 100%;
+	max-width: 100%;
 }
 
 .hamburger {
@@ -139,19 +141,6 @@ a:hover{
 	color: blue;
 }
 
-.wrapper{
-	position: absolute;
-	left: 0px;
-	top: 0px;
-	height: 5%;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-	font-family: 'Roboto', sans-serif;
-	margin-bottom: 0%;
-	opacity: 0.8;
-}
-
 .titleContainer{
 	position: absolute;
 	width: 50%;
@@ -258,21 +247,48 @@ a:hover{
 
 /*signup.php File*/
 .signupForm {
+	position: relative;
 	text-align: center;
 	margin-top: 5%;
 	display: flex;
 	justify-content: center;
+	align-items: center;
 }
 
 .signupFormDiv {
 	display: flex;
 	justify-content: center;
 	background-color: white;
-	width: 45%;
-	height: 450px;
+	width: 50vw;
+	height: 70vh;
 	border-radius: 10px;
-	opacity: 0.9;
+	opacity: 0.8;
 	box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.signupFormDiv form{
+	width: 70%;
+}
+
+.signupFormDiv form input{
+	display: block;
+	height: 10%;
+	width: 90%;
+	margin: 5px auto;
+}
+
+.signupFormDiv form button {
+	height: 12%;
+	width: 95%;
+	display: block;
+	margin: 50px auto 0px auto;
+	padding-bottom: 0px;
+	background-color: #fd9b4d;
+	color: white;
+	font-size: 20px;
+	border: 0px;
+	border-radius: 5px;
+	cursor: pointer;
 }
 
 .signupFormSub {
@@ -293,26 +309,11 @@ a:hover{
 	font-size: 14px;
 }
 
-.signupFormDiv button {
-	height: 50px;
-	width: 509px;
-	display: block;
-	margin-top: 50px;
-	margin-left: 0%;
-	margin-bottom: 0px;
-	padding-bottom: 0px;
-	background-color: #fd9b4d;
-	color: white;
-	font-size: 20px;
-	border: 0px;
-	border-radius: 5px;
-	cursor: pointer;
-}
-
 /*login.php File*/
 .loginForm {
+	position: relative;
 	text-align: center;
-	margin-top: 7%;
+	margin-top: 5%;
 	display: flex;
 	justify-content: center;
 }
@@ -321,11 +322,22 @@ a:hover{
 	display: flex;
 	justify-content: center;
 	background-color: white;
-	width: 45%;
-	height: 300px;
+	width: 50vw;
+	height: 55vh;
 	border-radius: 10px;
-	opacity: 0.9;
+	opacity: 0.8;
 	box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.loginFormDiv form {
+	width: 70%;
+}
+
+.loginFormDiv form input {
+	display: block;
+	height: 12%;
+	width: 90%;
+	margin: 5px auto;
 }
 
 .loginFormSub1 {
@@ -350,13 +362,11 @@ a:hover{
 	font-size: 14px;
 }
 
-.loginFormDiv button {
-	height: 50px;
-	width: 509px;
+.loginFormDiv form button {
+	height: 18%;
+	width: 95%;
 	display: block;
-	margin-top: 55px;
-	margin-left: 0%;
-	margin-bottom: 0px;
+	margin: 75px auto 0px auto;
 	padding-bottom: 0px;
 	background-color: #fd9b4d;
 	color: white;
@@ -397,11 +407,35 @@ input {
 	.desc{
 		font-size: 20px;
 	}
+
+	.signupForm{
+		margin-top: 10%;
+	}
+
+	.signupFormDiv {
+		width: 70vw;
+	}
+
+	.signupFormDiv form{
+		width: 75%;
+	}
+
+	.loginForm{
+		margin-top: 10%;
+	}
+
+	.loginFormDiv {
+		width: 70vw;
+	}
+
+	.loginFormDiv form{
+		width: 75%;
+	}
 }
 
 @media screen and (max-width: 700px) {
 	.wrapper .appLogo{
-		margin-right: 35%;
+		margin-right: 30%;
 	}
 
 	.wrapper3 {
@@ -418,6 +452,30 @@ input {
 	
 	.desc{
 		font-size: 15px;
+	}
+
+	.signupForm{
+		margin-top: 12%;
+	}
+
+	.signupFormDiv {
+		width: 90vw;
+	}
+
+	.signupFormDiv form{
+		width: 80%;
+	}
+
+	.loginForm{
+		margin-top: 12%;
+	}
+
+	.loginFormDiv {
+		width: 90vw;
+	}
+
+	.loginFormDiv form{
+		width: 80%;
 	}
 }
 
@@ -446,10 +504,52 @@ input {
 	.desc{
 		font-size: 10px;
 	}
+
+	.signupForm{
+		margin-top: 15%;
+	}
+
+	.signupFormDiv {
+		width: 100vw;
+	}
+
+	.signupFormDiv form{
+		width: 100%;
+	}
+
+	.loginForm{
+		margin-top: 35%;
+	}
+
+	.loginFormDiv {
+		width: 100vw;
+	}
+
+	.loginFormDiv form{
+		width: 100%;
+	}
 }
 
 @media screen and (max-width: 400px) {
 	.mobileLinks li{
 		font-size: 13px;
+	}
+}
+
+@media screen and (max-height: 800px) {
+	.signupForm form input{
+		height: 7%;
+	}
+
+	.signupFormDiv form button {
+		height: 10%;
+	}
+
+	.loginForm form input{
+		height: 10%;
+	}
+
+	.loginFormDiv form button {
+		height: 15%;
 	}
 }
