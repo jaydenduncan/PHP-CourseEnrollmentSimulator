@@ -1,0 +1,134 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap');
+
+/* Sidebar Styles */
+.wrapper{
+    display: flex;
+    position: relative;
+    height: 100%;
+}
+
+.wrapper .sidebar{
+    width: 200px;
+    height: 100%;
+    background-image: url("../img/SchoolSuppliesBGImage.jpg");
+    padding: 30px 0px;
+    position: fixed;
+}
+
+.wrapper .sidebar .profileImg{
+    background-color: white;
+    display: inline-block;
+    margin-left: 45px;
+    padding-top: 10px;
+    height: 100px;
+    width: 100px;
+    border-radius: 100%;
+    text-align: center;
+}
+
+.wrapper .sidebar .profileImg a i{
+    font-size: 4em;
+    color: black;
+    height: 100%;
+    width: 100%;
+}
+
+.wrapper .sidebar .profileName{
+    color: black;
+    font-size: 25px;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 40px 5px;
+}
+
+.wrapper .sidebar .logoutLink{
+    padding-left: 55px;
+    font-size: 25px;
+}
+
+.wrapper .sidebar .logoutLink:visited{
+    color: #0000EE;
+}
+
+.wrapper .sidebar ul{
+    margin-top: 50px;
+}
+
+.wrapper .sidebar ul .selected{
+    padding: 35px 15px;
+    border-bottom: 1px solid #bdb8d7;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    border-top: 1px solid rgba(255,255,255,0.05);
+    background-color: #D0DED7;
+    opacity: 0.95;
+}
+
+.wrapper .sidebar ul .selected a{
+    color: #1739e6;
+}
+
+.wrapper .sidebar ul li{
+    padding: 35px 15px;
+    border-bottom: 1px solid #bdb8d7;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    border-top: 1px solid rgba(255,255,255,0.05);
+} 
+
+.wrapper .sidebar ul li a{
+    color: #000000;
+    display: block;
+    font-size: 27px;
+}
+
+.wrapper .sidebar ul li i{
+    padding-right: 50px;
+}
+
+.wrapper .sidebar ul li a .fas{
+    width: 25px;
+}
+
+.wrapper .sidebar ul li:hover{
+    background-color: #D0DED7;
+    opacity: 0.95;
+}
+    
+.wrapper .sidebar ul li:hover a{
+    color: #1739e6;
+}
+
+.wrapper .sidebar .social_media{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+}
+
+.wrapper .sidebar .social_media a{
+    display: block;
+    width: 40px;
+    background: #594f8d;
+    height: 40px;
+    line-height: 45px;
+    text-align: center;
+    margin: 0 5px;
+    color: #bdb8d7;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+/* Main Content Styles */
+.wrapper main{
+    width: 100%;
+    height: 100%;
+    margin-left: 200px;
+}
+
+.wrapper main .header{
+    padding: 20px;
+    background: #fff;
+    color: #717171;
+    border-bottom: 1px solid #e0e4e8;
+}

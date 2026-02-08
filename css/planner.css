@@ -1,0 +1,223 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap');
+
+/* planner.php styles */
+.info {
+    display: block;
+    height: 100%;
+}
+
+#addCourseLinkDiv {
+    display: flex;
+    justify-content: center;
+}
+
+#addCourseLink {
+    display: flex;
+    justify-content: center;
+    height: 30px;
+    width: 175px;
+    background-color: #ffffff;
+    border-radius: 3px;
+    margin-top: 25px;
+    padding-top: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #000000;
+}
+
+#addCourseLink p {
+    margin-right: 50px;
+    margin-left: 0px;
+}
+
+#cartContainer {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    height: auto;
+}
+
+#coursesCart {
+    background-color: #cbcbcb;
+    outline: #000000;
+    width: 85%;
+    height: 100%;
+    border-radius: 5px;
+    margin-top: 25px;
+    border: 2px solid black;
+}
+
+#coursesCart .cartHeading {
+    display: flex;
+    justify-content: center;
+    color: #000000;
+    margin: 10px 20px;
+}
+
+#coursesCart .cartHeading .cartTitle {
+    font-size: 25px;
+    margin-top: 10px;
+    margin-right: 40%;
+    text-align: center;
+}
+
+#coursesCart .cartHeading .status {
+    display: flex;
+    justify-content: center;
+    margin-right: 0px;
+}
+
+#coursesCart .cartHeading .status .statusText {
+    margin-top: 10px;
+    margin-right: 25px;
+    width: 100%;
+    font-size: 20px;
+}
+
+#coursesCart .cartHeading a {
+    color: black;
+    font-size: 35px;
+}
+
+#coursesCart hr {
+    border: 1px solid black;
+}
+
+#coursesCart .classesHeader {
+    display: grid;
+    grid-auto-columns: 1fr;
+    grid-auto-flow: column;
+}
+
+#coursesCart .classesHeader h5 {
+    text-align: center;
+}
+
+#coursesCart .classesHeader .instrHeader {
+    width: 200px;
+}
+
+#stuClasses {
+    display: block;
+}
+
+#stuClasses .defaultClassDiv {
+    display: flex;
+    justify-content: center;
+    background-color: #ffffff;
+    color: #000000;
+    border: 1px solid #000000;
+    margin-bottom: 30px;
+    height: 75px;
+}
+
+#stuClasses .defaultClassDiv p {
+    font-size: 20px;
+    padding-top: 20px;
+}
+
+#stuClasses .stuClass {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(2, 50px);
+    background-color: #ffffff;
+    color: #000000;
+    border: 1px solid #000000;
+    margin-bottom: 30px;
+}
+
+
+#stuClasses .stuClass p {
+    text-align: center;
+    font-size: 17px;
+    padding-top: 20px;
+}
+
+#stuClasses .stuClass .classCourse {
+    grid-row: 1 / 2;
+    grid-column: 1 / 2;
+}
+
+#stuClasses .stuClass .classSection {
+    grid-row: 1 / 2;
+    grid-column: 2 / 3;
+}
+
+#stuClasses .stuClass .classInstr {
+    grid-row: 1 / 2;
+    grid-column: 3 / 4;
+    width: 200px;
+}
+
+#stuClasses .stuClass .classST {
+    grid-row: 1 / 2;
+    grid-column: 4 / 5;
+}
+
+#stuClasses .stuClass .classET {
+    grid-row: 1 / 2;
+    grid-column: 5 / 6;
+}
+
+#stuClasses .stuClass .classDays {
+    grid-row: 1 / 2;
+    grid-column: 6 / 7;
+}
+
+#stuClasses .stuClass .classCredits {
+    grid-row: 1 / 2;
+    grid-column: 7 / 8;
+}
+
+#stuClasses .stuClass .stuClassTools {
+    grid-row: 2 / 3;
+    grid-column: 6 / 8;
+    display: inline-flex;
+    justify-content: right;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+}
+
+#stuClasses .stuClass .stuClassTools a{
+    margin: 10px;
+    cursor: pointer;
+}
+
+#stuClasses .stuClass .stuClassTools a:link, 
+#stuClasses .stuClass .stuClassTools a:visited, 
+#stuClasses .stuClass .stuClassTools a:hover, 
+#stuClasses .stuClass .stuClassTools a:active{
+    color: black;
+}
+
+#stuClasses .stuClass .stuClassTools p{
+    margin: 0px;
+    font-size: 20px;
+    padding: 2px 9px;
+}
+
+#registerBtnArea {
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+}
+
+#registerBtnContainer {
+    display: flex;
+    justify-content: right;
+    width: 85%;
+}
+
+#registerBtn {
+    background-color: #cbcbcb;
+    border: 0px;
+    border-radius: 7px;
+    color: #ffffff;
+    font-size: 20px;
+    cursor: pointer;
+    height: 40px;
+    width: 125px;
+    margin-bottom: 25px;
+}

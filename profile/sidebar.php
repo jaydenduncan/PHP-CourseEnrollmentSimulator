@@ -38,7 +38,13 @@
     <link rel="stylesheet" href="../fontawesome/css/fontawesome.min.css">
     <link rel="stylesheet" href="../fontawesome/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
-    <link rel="stylesheet" type="text/css" href="../css/styles2.css">
+    <link rel="stylesheet" type="text/css" href="../css/profile.css">
+    <link rel="stylesheet" type="text/css" href="../css/sidebar.css">
+    <link rel="stylesheet" type="text/css" href="../css/planner.css">
+    <link rel="stylesheet" type="text/css" href="../css/planner2.css">
+    <link rel="stylesheet" type="text/css" href="../css/schedule.css">
+    <link rel="stylesheet" type="text/css" href="../css/settings.css">
+    <link rel="stylesheet" type="text/css" href="../css/help.css">
     <!--[if lt IE 9]>
     <script>
         document.createElement("article");
@@ -55,18 +61,18 @@
 
         <div class="wrapper">
             <div class="sidebar">
-                <div class="profileImg">
+                <div id="profileImg" class="profileImg">
                     <a href="#">
                         <i class="far fa-user"></i>
                     </a>
                 </div>
-                <p>
+                <p id="profileName" class="profileName">
                     <?php echo $firstName . " " .$lastName; ?>
                 </p>
 
-                <a id="logoutLink" href="../includes/logout.inc.php">Log Out</a>
+                <a id="logoutLink" class="logoutLink" href="../includes/logout.inc.php">Log Out</a>
 
-                <ul>
+                <ul id="profileLinks" class="profileLinks">
                     <?php
                         function debug_to_console($data) {
                             $output = $data;
