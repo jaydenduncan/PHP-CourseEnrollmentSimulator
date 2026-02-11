@@ -43,8 +43,10 @@
 }
 
 .wrapper .sidebar .logoutLink{
-    padding-left: 55px;
+    width: 100%;
     font-size: 25px;
+    display: block;
+    text-align: center;
 }
 
 .wrapper .sidebar .logoutLink:visited{
@@ -131,4 +133,14 @@
     background: #fff;
     color: #717171;
     border-bottom: 1px solid #e0e4e8;
+}
+
+@media screen and (max-width: 1050px){
+    .wrapper .sidebar{
+        display: none;
+    }
+
+    .wrapper main{
+        margin-left: 0;
+    }
 }

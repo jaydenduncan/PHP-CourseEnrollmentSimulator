@@ -3,8 +3,10 @@
 
 /* planner.php styles */
 .info {
-    display: block;
+    display: flex;
     height: 100%;
+    align-items: center;
+    flex-direction: column;
 }
 
 #addCourseLinkDiv {
@@ -52,13 +54,14 @@
     display: flex;
     justify-content: center;
     color: #000000;
-    margin: 10px 20px;
+    margin: 10px 0px;
+    width: 100%;
 }
 
 #coursesCart .cartHeading .cartTitle {
     font-size: 25px;
     margin-top: 10px;
-    margin-right: 40%;
+    margin-right: 35%;
     text-align: center;
 }
 
@@ -201,23 +204,125 @@
 #registerBtnArea {
     display: flex;
     justify-content: center;
-    margin-top: 25px;
+    margin: auto;
+    height: auto;
+    width: 80%;
+    margin-top: 50px;
 }
 
 #registerBtnContainer {
     display: flex;
-    justify-content: right;
-    width: 85%;
+    justify-content: center;
 }
 
 #registerBtn {
     background-color: #cbcbcb;
     border: 0px;
     border-radius: 7px;
-    color: #ffffff;
+    color: #000000;
     font-size: 20px;
     cursor: pointer;
-    height: 40px;
-    width: 125px;
+    height: 50px;
+    width: 350px;
     margin-bottom: 25px;
+}
+
+@media screen and (max-width: 850px){
+    #coursesCart .cartHeading .cartTitle {
+        font-size: 20px;
+        margin-right: 30%;
+    }
+
+    #coursesCart .cartHeading .status .statusText {
+        font-size: 18px;
+    }
+
+    #coursesCart .cartHeading a {
+        font-size: 32px;
+    }
+
+    #coursesCart .classesHeader {
+        grid-auto-columns: repeat(7, 1fr);
+    }
+
+    #coursesCart .classesHeader .courseHeader {
+        grid-column: 1 / 3;
+        width: 200px;
+    }
+
+    #coursesCart .classesHeader .stHeader {
+        grid-column: 4 / 6;
+    }
+
+    #coursesCart .classesHeader .etHeader {
+        grid-column: 6 / 8;
+    }
+
+    #coursesCart .classesHeader .sectionHeader, .instrHeader, .daysHeader, .creditsHeader {
+        display: none;
+    }
+
+    #stuClasses .stuClass .classCourse {
+        grid-row: 1 / 2;
+        grid-column: 1 / 3;
+        width: 200px;
+    }
+
+    #stuClasses .stuClass .classST {
+        grid-row: 1 / 2;
+        grid-column: 4 / 6;
+    }
+
+    #stuClasses .stuClass .classET {
+        grid-row: 1 / 2;
+        grid-column: 6 / 8;
+    }
+
+    #stuClasses .stuClass .classSection, .classInstr, .classDays, .classCredits{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 650px){
+    #stuClasses .defaultClassDiv p {
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 480px){
+    #coursesCart .cartHeading .cartTitle {
+        font-size: 15px;
+        margin-right: 20%;
+    }
+
+    #coursesCart .cartHeading .status .statusText {
+        font-size: 15px;
+    }
+
+    #coursesCart .cartHeading a {
+        font-size: 28px;
+    }
+
+    #coursesCart .classesHeader {
+        display: none;
+    }
+
+    #stuClasses .defaultClassDiv p {
+        font-size: 12px;
+    }
+
+    #stuClasses .stuClass .classCourse {
+        grid-row: 1 / 2;
+        grid-column: 3 / 6;
+    }
+
+    #stuClasses .stuClass p:not(:first-child){
+        display: none;
+    }
+}
+
+@media screen and (max-width: 400px){
+    #registerBtn {
+        width: 250px;
+    }
 }

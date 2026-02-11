@@ -65,16 +65,16 @@
                         }
                     ?>
 
-                    <div id="cartContainer">
-                        <div id="coursesCart">
-                            <div class="cartHeading">
-                                <p class="cartTitle">
+                    <div id="cartContainer" class="cartContainer">
+                        <div id="coursesCart" class="coursesCart">
+                            <div id="cartHeading" class="cartHeading">
+                                <p id="cartTitle" class="cartTitle">
                                     <?php
                                         if($registered) echo "Registered Classes";
                                         else echo "Course Cart"; 
                                     ?>
                                 </p>
-                                <div class="status">
+                                <div id="status" class="status">
                                     <?php
                                         if(!$registered){
                                             echo "<p class='statusText'>Status: Not Registered</p>";
@@ -89,7 +89,7 @@
 
                             <hr/>
 
-                            <div class="classesHeader">
+                            <div id="classesHeader" class="classesHeader">
                                 <h5 class="courseHeader">Course</h5>
                                 <h5 class="sectionHeader">Section</h5>
                                 <h5 class="instrHeader">Instructor</h5>
@@ -99,7 +99,7 @@
                                 <h5 class="creditsHeader">Credits</h5>
                             </div>
 
-                            <div id="stuClasses">
+                            <div id="stuClasses" class="stuClasses">
                                 <?php
                                     // Show default message if the student has no classes in cart
                                     if(empty($student->getClasses())) {
