@@ -61,6 +61,8 @@
     <body>
 
         <div class="wrapper">
+            <input id="input-toggler" class="input-toggler" type="checkbox"></input>
+            <span class="arrow" onclick="toggleInputCheckbox()"><i id="arrowIcon" class="fas fa-chevron-right"></i></span>
             <div class="sidebar">
                 <div id="profileImg" class="profileImg">
                     <a href="#">

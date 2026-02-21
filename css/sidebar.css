@@ -8,12 +8,23 @@
     height: 100%;
 }
 
+.input-toggler {
+  display: none; /* Hide the actual checkbox */
+}
+
+.arrow{
+    display: none;
+    font-size: 45px;
+}
+
 .wrapper .sidebar{
     width: 200px;
     height: 100%;
     background-image: url("../img/SchoolSuppliesBGImage.jpg");
     padding: 30px 0px;
     position: fixed;
+    z-index: 999;
+    overflow-y: scroll;
 }
 
 .wrapper .sidebar .profileImg{
@@ -100,27 +111,6 @@
     color: #1739e6;
 }
 
-.wrapper .sidebar .social_media{
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-}
-
-.wrapper .sidebar .social_media a{
-    display: block;
-    width: 40px;
-    background: #594f8d;
-    height: 40px;
-    line-height: 45px;
-    text-align: center;
-    margin: 0 5px;
-    color: #bdb8d7;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-}
-
 /* Main Content Styles */
 .wrapper main{
     width: 100%;
@@ -137,10 +127,39 @@
 
 @media screen and (max-width: 1050px){
     .wrapper .sidebar{
+        transform: translateX(-100%); /* Move sidebar off-screen to the left */
+        transition: transform 0.5s ease; /* Smooth animation */
+    }
+
+    .input-toggler:checked ~ .sidebar{
+        transform: translateX(0); /* Slide the sidebar into view when checked */
+    }
+
+    .input-toggler:checked ~ main{
         display: none;
+    }
+    
+    /* Push arrow to the right when open */
+    .arrow .fas{
+        cursor: pointer;
+    }
+
+    .arrow{
+        display: block;
+        transition: margin-left 0.5s ease;
+    }
+
+    .input-toggler:checked ~ .arrow{
+        margin-left: 200px;
     }
 
     .wrapper main{
         margin-left: 0;
+    }
+}
+
+@media screen and (max-width: 600px){
+    .arrow{
+        font-size: 25px;
     }
 }

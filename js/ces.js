@@ -52,3 +52,17 @@ function faq_close(){
     faq_answer.style.display = "none";
     active_faq_answer_id = "";
 }
+
+function toggleInputCheckbox(){
+    let checkbox = document.getElementById("input-toggler");
+    if(checkbox.checked){
+        checkbox.checked = false;
+    }
+    else{
+        checkbox.checked = true;
+    }
+
+    let arrow = document.getElementById("arrowIcon");
+    arrow.classList.toggle("fa-chevron-right");
+    arrow.classList.toggle("fa-chevron-left");
+}

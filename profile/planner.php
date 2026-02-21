@@ -83,7 +83,7 @@
                                             echo "<p class='statusText'>Status: Registered</p>";
                                         }
                                     ?>
-                                    <a href="#"><i class="far fa-question-circle"></i></a>
+                                    <a href="./help_main.php"><i class="far fa-question-circle"></i></a>
                                 </div>
                             </div>
 
