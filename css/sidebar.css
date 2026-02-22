@@ -2,12 +2,6 @@
 @import url('https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap');
 
 /* Sidebar Styles */
-.wrapper{
-    display: flex;
-    position: relative;
-    height: 100%;
-}
-
 .input-toggler {
   display: none; /* Hide the actual checkbox */
 }
@@ -109,13 +103,6 @@
     
 .wrapper .sidebar ul li:hover a{
     color: #1739e6;
-}
-
-/* Main Content Styles */
-.wrapper main{
-    width: 100%;
-    height: 100%;
-    margin-left: 200px;
 }
 
 .wrapper main .header{

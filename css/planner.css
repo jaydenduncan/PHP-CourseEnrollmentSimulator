@@ -2,13 +2,6 @@
 @import url('https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap');
 
 /* planner.php styles */
-.info {
-    display: flex;
-    height: 100%;
-    align-items: center;
-    flex-direction: column;
-}
-
 #addCourseLinkDiv {
     display: flex;
     justify-content: center;
