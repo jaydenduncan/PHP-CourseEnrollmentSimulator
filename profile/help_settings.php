@@ -5,10 +5,12 @@
                 <div class="faqs settingsFAQs">
                     <div class="faqBody settingsFAQBody">
                         <h2>FAQs</h2>
-                        <ul class="faqLinks settingsFAQLinks">
-                            <li><p id="settings_faq_1" onclick="faq_handler(this.id)">How can I change my account information?</p></li>
-                            <li><p id="settings_faq_2" onclick="faq_handler(this.id)">Why am I getting an error message when changing my account information?</p></li>
-                        </ul>
+                        <div class="faqLinksDiv">
+                            <ul class="faqLinks settingsFAQLinks">
+                                <li><p id="settings_faq_1" onclick="faq_handler(this.id)">How can I change my account information?</p></li>
+                                <li><p id="settings_faq_2" onclick="faq_handler(this.id)">Why am I getting an error message when changing my account information?</p></li>
+                            </ul>
+                        </div>
                         <a href="help_main.php"><button class="backBtn">Back</button></a>
                         <div id="settings_faq_answer_1" class="faq_answer">
                             <i class="fa-solid fa-x" onclick="faq_close()"></i>

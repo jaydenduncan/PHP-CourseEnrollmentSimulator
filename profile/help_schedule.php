@@ -5,10 +5,12 @@
                 <div class="faqs scheduleFAQs">
                     <div class="faqBody scheduleFAQBody">
                         <h2>FAQs</h2>
-                        <ul class="faqLinks scheduleFAQLinks">
-                            <li><p id="schedule_faq_1" onclick="faq_handler(this.id)">What is the schedule tab used for?</p></li>
-                            <li><p id="schedule_faq_2" onclick="faq_handler(this.id)">Why is my schedule calendar blank?</p></li>
-                        </ul>
+                        <div class="faqLinksDiv">
+                            <ul class="faqLinks scheduleFAQLinks">
+                                <li><p id="schedule_faq_1" onclick="faq_handler(this.id)">What is the schedule tab used for?</p></li>
+                                <li><p id="schedule_faq_2" onclick="faq_handler(this.id)">Why is my schedule calendar blank?</p></li>
+                            </ul>
+                        </div>
                         <a href="help_main.php"><button class="backBtn">Back</button></a>
                         <div id="schedule_faq_answer_1" class="faq_answer">
                             <i class="fa-solid fa-x" onclick="faq_close()"></i>

@@ -5,14 +5,16 @@
                 <div class="faqs plannerFAQs">
                     <div class="faqBody plannerFAQBody">
                         <h2 class="plannerFAQHeader">FAQs</h2>
-                        <ul class="faqLinks plannerFAQLinks">
-                            <li><p id="planner_faq_1" onclick="faq_handler(this.id)">How do I add a course to my cart?</p></li>
-                            <li><p id="planner_faq_2" onclick="faq_handler(this.id)">Why is a class failing to add to my cart?</p></li>
-                            <li><p id="planner_faq_3" onclick="faq_handler(this.id)">Why am I getting an empty input error?</p></li>
-                            <li><p id="planner_faq_4" onclick="faq_handler(this.id)">How are the course classes categorized?</p></li>
-                            <li><p id="planner_faq_5" onclick="faq_handler(this.id)">How do I delete a class from my cart?</p></li>
-                            <li><p id="planner_faq_6" onclick="faq_handler(this.id)">Why is the 'Register' button missing from my planner?</p></li>
-                        </ul>
+                        <div class="faqLinksDiv">
+                            <ul class="faqLinks plannerFAQLinks">
+                                <li><p id="planner_faq_1" onclick="faq_handler(this.id)">How do I add a course to my cart?</p></li>
+                                <li><p id="planner_faq_2" onclick="faq_handler(this.id)">Why is a class failing to add to my cart?</p></li>
+                                <li><p id="planner_faq_3" onclick="faq_handler(this.id)">Why am I getting an empty input error?</p></li>
+                                <li><p id="planner_faq_4" onclick="faq_handler(this.id)">How are the course classes categorized?</p></li>
+                                <li><p id="planner_faq_5" onclick="faq_handler(this.id)">How do I delete a class from my cart?</p></li>
+                                <li><p id="planner_faq_6" onclick="faq_handler(this.id)">Why is the 'Register' button missing from my planner?</p></li>
+                            </ul>
+                        </div>
                         <a href="help_main.php"><button class="backBtn">Back</button></a>
                         <div id="planner_faq_answer_1" class="faq_answer">
                             <i class="fa-solid fa-x" onclick="faq_close()"></i>
