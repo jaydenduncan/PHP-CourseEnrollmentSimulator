@@ -45,42 +45,44 @@
                         }
                     }
                 ?>
-                <div id="updateInfoDiv" class="accountUpdateInfo">
-                    <h2>Account Information</h2>
-                    <form action="../includes/updateInfo.inc.php" method="post">
-                        <label id="firstNameLabel" for="firstName">First Name</label>
-                        <input type="text" id="firstName" name="firstName" value="<?php echo $firstName ?>"/>
+                <div class="info">
+                    <div id="updateInfoDiv" class="accountUpdateInfo">
+                        <h2>Account Information</h2>
+                        <form action="../includes/updateInfo.inc.php" method="post">
+                            <label id="firstNameLabel" for="firstName">First Name</label>
+                            <input type="text" id="firstName" name="firstName" value="<?php echo $firstName ?>"/>
 
-                        <label id="lastNameLabel" for="lastName">Last Name</label>
-                        <input type="text" id="lastName" name="lastName" value="<?php echo $lastName ?>"/>
+                            <label id="lastNameLabel" for="lastName">Last Name</label>
+                            <input type="text" id="lastName" name="lastName" value="<?php echo $lastName ?>"/>
 
-                        <label id="stuNumLabel" for="stuNum">Student Number</label>
-                        <input type="text" id="stuNum" name="stuNum" value="<?php echo $studentNumber ?>"/>
+                            <label id="stuNumLabel" for="stuNum">Student Number</label>
+                            <input type="text" id="stuNum" name="stuNum" value="<?php echo $studentNumber ?>"/>
 
-                        <label id="emailLabel" for="email">Email</label>
-                        <input type="email" id="email" name="email" value="<?php echo $email ?>"/>
+                            <label id="emailLabel" for="email">Email</label>
+                            <input type="email" id="email" name="email" value="<?php echo $email ?>"/>
 
-                        <label id="usernameLabel" for="username">Username</label>
-                        <input type="text" id="username" name="username" value="<?php echo $username ?>"/>
+                            <label id="usernameLabel" for="username">Username</label>
+                            <input type="text" id="username" name="username" value="<?php echo $username ?>"/>
 
-                        <button type="submit" id="button1" name="submit">Update Information</button>
-                    </form>
-                </div>
+                            <button type="submit" id="button1" name="submit">Update Information</button>
+                        </form>
+                    </div>
 
-                <div id="changePwdDiv" class="accountUpdateInfo">
-                    <h2>Change Password</h2>
-                    <form action="../includes/updatePwd.inc.php" method="post">
-                        <label id="currentPwdLabel" for="currentPwd">Current Password</label>
-                        <input type="password" id="currentPwd" name="currentPwd"/>
+                    <div id="changePwdDiv" class="accountUpdateInfo">
+                        <h2>Change Password</h2>
+                        <form action="../includes/updatePwd.inc.php" method="post">
+                            <label id="currentPwdLabel" for="currentPwd">Current Password</label>
+                            <input type="password" id="currentPwd" name="currentPwd"/>
 
-                        <label id="newPwdLabel" for="newPwd">New Password</label>
-                        <input type="password" id="newPwd" name="newPwd"/>
+                            <label id="newPwdLabel" for="newPwd">New Password</label>
+                            <input type="password" id="newPwd" name="newPwd"/>
 
-                        <label id="newPwdRepeatLabel" for="newPwdRepeat">Re-enter Password</label>
-                        <input type="password" id="newPwdRepeat" name="newPwdRepeat"/>
+                            <label id="newPwdRepeatLabel" for="newPwdRepeat">Re-enter Password</label>
+                            <input type="password" id="newPwdRepeat" name="newPwdRepeat"/>
 
-                        <button type="submit" id="button2" name="submit">Update Password</button>
-                    </form>
+                            <button type="submit" id="button2" name="submit">Update Password</button>
+                        </form>
+                    </div>
                 </div>
 
 <?php

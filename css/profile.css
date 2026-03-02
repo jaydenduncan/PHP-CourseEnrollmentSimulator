@@ -1,16 +1,9 @@
 @charset "UTF-8";
 @import url('https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap');
 
-html {
-    height: 100vh;
-    width: 100vw;
-    min-width: 700px;
-}
-
 body {
     background-color: #23d8fc;
     height: 100vh;
-    width: 100vw;
 }
 
 .wrapper{
@@ -24,7 +17,6 @@ main{
     width: 100%;
     height: 100%;
     margin-left: 200px;
-    overflow-x: scroll;
 }
 
 .info {

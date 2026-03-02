@@ -113,6 +113,10 @@
 }
 
 @media screen and (max-width: 1050px){
+    main{
+        margin: 0;
+    }
+    
     .wrapper .sidebar{
         transform: translateX(-100%); /* Move sidebar off-screen to the left */
         transition: transform 0.5s ease; /* Smooth animation */

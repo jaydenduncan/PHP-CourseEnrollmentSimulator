@@ -4,13 +4,15 @@
 /* Settings Page Styles */
 .accountUpdateInfo {
     background-color: white;
-    height: 450px;
-    margin: 20px 50px;
+    height: 100%;
+    width: 80%;
+    margin: 20px 20px 20px 0px;
     border-radius: 10px;
     border: 3px solid black;
 }
 
 .accountUpdateInfo h2 {
+    text-align: left;
     padding-top: 10px;
     padding-left: 30px;
     margin-bottom: 25px;
@@ -22,6 +24,32 @@
     gap: 5px 0px;
 }
 
+.accountUpdateInfo form input {
+    border-radius: 4px;
+    border: 2px solid #6c706d;
+    padding-left: 5px;
+    background-color: #babfbb;
+    width: 250px;
+    height: 30px;
+}
+
+.accountUpdateInfo form input:focus{
+    background-color: white;
+}
+
+.accountUpdateInfo form button{
+    width: 200px;
+    height: 40px;
+    margin: 15px 30px;
+    padding: 2px 10px;
+    font-size: 20px;
+    border-radius: 7px;
+    border: 0px;
+    background-color: #fd9b4d;
+    color: white;
+    cursor: pointer;
+}
+
 #firstNameLabel {
     grid-row-start: 1;
 	grid-column-start: 1;
@@ -31,8 +59,6 @@
 #firstName {
     grid-row-start: 2;
 	grid-column-start: 1;
-    width: 250px;
-    height: 30px;
     margin-bottom: 30px;
     margin-left: 30px;
     border: #8492A6 2px solid;
@@ -47,8 +73,6 @@
 #lastName {
     grid-row-start: 2;
 	grid-column-start: 2;
-    width: 250px;
-    height: 30px;
     margin-right: 300px;
     border: #8492A6 2px solid;
     font-size: 17px;
@@ -63,8 +87,6 @@
 #stuNum {
     grid-row-start: 4;
 	grid-column-start: 1;
-    width: 250px;
-    height: 30px;
     margin-bottom: 30px;
     margin-left: 30px;
     border: #8492A6 2px solid;
@@ -78,9 +100,7 @@
 
 #email {
     grid-row-start: 4;
-	grid-column-start: 2;
-    width: 250px;
-    height: 30px;
+	grid-column-start: 2;;
     margin-right: 300px;
     border: #8492A6 2px solid;
     font-size: 17px;
@@ -95,8 +115,6 @@
 #username {
     grid-row-start: 6;
 	grid-column-start: 1;
-    width: 250px;
-    height: 30px;
     margin-left: 30px;
     margin-bottom: 30px;
     border: #8492A6 2px solid;
@@ -106,33 +124,6 @@
 #button1 {
     grid-row-start: 7;
 	grid-column-start: 1;
-    margin-top: 30px;
-    margin-left: 30px;
-    margin-bottom: 0px;
-    padding: 2px 10px;
-    width: 200px;
-    height: 40px;
-    font-size: 20px;
-    border-radius: 7px;
-    border: 0px;
-    background-color: #fd9b4d;
-    color: white;
-    cursor: pointer;
-}
-
-.accountUpdateInfo form input {
-    border-radius: 4px;
-    border: 2px solid #6c706d;
-    padding-left: 5px;
-    background-color: #babfbb;
-}
-
-.accountUpdateInfo form input:focus{
-    background-color: white;
-}
-
-#changePwdDiv {
-    height: 360px;
 }
 
 #currentPwdLabel {
@@ -144,8 +135,6 @@
 #currentPwd {
     grid-row-start: 2;
     grid-column-start: 1;
-    width: 250px;
-    height: 30px;
     margin-bottom: 30px;
     margin-left: 30px;
     border: #8492A6 2px solid;
@@ -161,8 +150,6 @@
 #newPwd {
     grid-row-start: 4;
     grid-column-start: 1;
-    width: 250px;
-    height: 30px;
     margin-bottom: 30px;
     margin-left: 30px;
     border: #8492A6 2px solid;
@@ -177,8 +164,6 @@
 #newPwdRepeat {
     grid-row-start: 4;
     grid-column-start: 2;
-    width: 250px;
-    height: 30px;
     margin-bottom: 30px;
     margin-right: 300px;
     border: #8492A6 2px solid;
@@ -188,16 +173,79 @@
 #button2 {
     grid-row-start: 5;
     grid-column-start: 1;
-    margin-top: 30px;
-    margin-left: 30px;
-    margin-bottom: 0px;
-    padding: 2px 10px;
-    width: 200px;
-    height: 40px;
-    font-size: 20px;
-    border-radius: 7px;
-    border: 0px;
-    background-color: #fd9b4d;
-    color: white;
-    cursor: pointer;
+}
+
+@media screen and (max-width: 700px){
+    #lastNameLabel {
+        grid-row-start: 3;
+        grid-column-start: 1;
+        margin-left: 30px;
+    }
+
+    #lastName {
+        grid-row-start: 4;
+        grid-column-start: 1;
+        margin: 0px 0px 30px 30px;
+    }
+
+    #stuNumLabel {
+        grid-row-start: 5;
+    }
+
+    #stuNum {
+        grid-row-start: 6;
+    }
+
+    #emailLabel {
+        grid-row-start: 7;
+        grid-column-start: 1;
+        margin-left: 30px;
+    }
+
+    #email {
+        grid-row-start: 8;
+        grid-column-start: 1;
+        margin: 0px 0px 30px 30px;
+    }
+
+    #usernameLabel {
+        grid-row-start: 9;
+    }
+
+    #username {
+        grid-row-start: 10;
+    }
+
+    #button1 {
+        grid-row-start: 11;
+    }
+
+    #newPwdRepeatLabel {
+        grid-row-start: 5;
+        grid-column-start: 1;
+        margin-left: 30px;
+    }
+
+    #newPwdRepeat {
+        grid-row-start: 6;
+        grid-column-start: 1;
+        margin: 0px 0px 30px 30px;
+    }
+
+    #button2 {
+        grid-row-start: 7;
+        grid-column-start: 1;
+    }
+}
+
+@media screen and (max-width: 400px){
+    .accountUpdateInfo form input{
+        width: 175px;
+    }
+
+    .accountUpdateInfo form button{
+        width: 150px;
+        height: 35px;
+        font-size: 15px;
+    }
 }
