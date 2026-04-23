@@ -40,7 +40,6 @@
     height: 100%;
     border-radius: 5px;
     margin-top: 25px;
-    border: 2px solid black;
 }
 
 #coursesCart .cartHeading {
@@ -119,7 +118,8 @@
     grid-template-rows: repeat(2, 50px);
     background-color: #ffffff;
     color: #000000;
-    border: 1px solid #000000;
+    border-top: 1px solid #000000;
+    border-bottom: 1px solid #000000;
     margin-bottom: 30px;
 }
 
