@@ -4,6 +4,7 @@
 /* Settings Page Styles */
 .accountUpdateInfo {
     background-color: white;
+    box-shadow: inset 6px 6px 10px 0 rgba(0, 0, 0, 0.2), inset -6px -6px 10px 0 rgba(255, 255, 255, 0.5);
     height: 100%;
     width: 80%;
     margin: 20px 20px 20px 0px;
