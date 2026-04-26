@@ -63,7 +63,7 @@
 
                             <div class="btnSet">
                                 <a href="planner.php"><button type="button">Cancel</button></a>
-                                <button class="nextBtn" type="submit" name="submit">Next</button>
+                                <span><button class="nextBtn" type="submit" name="submit">Next</button></span>
                             </div>
                         </form>
                     </div>

@@ -63,7 +63,7 @@
                         <form class="classForm" action="../includes/addcourse.inc.php" method="post">
                             <h1>Choose an available class below:</h1>
 
-                            <label for="classTimeSlot">Choose from the available time slots:</label> <br/>
+                            <label for="classTimeSlot">Time Slots:</label> <br/>
                             <select id="classTimeSlot" name="classTimeSlot" size="3">
                                 <?php
                                     $dateTimeImmutable = new DateTimeImmutable();
@@ -101,7 +101,7 @@
                             <div class="btnSet">
                                 <a href="planner.php"><button type="button">Cancel</button></a>
                                 <a href="planner3.php"><button type="button">Back</button></a>
-                                <button type="submit" class="addBtn" name="submit">Add</button>
+                                <span><button type="submit" class="addBtn" name="submit">Add</button></span>
                             </div>
                         </form>
                     </div>

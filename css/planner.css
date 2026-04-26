@@ -12,13 +12,13 @@
     justify-content: center;
     height: 30px;
     width: 175px;
-    background-color: #ffffff;
+    background-color: #000000;
     border-radius: 3px;
     margin-top: 25px;
     padding-top: 5px;
     font-size: 18px;
     font-weight: bold;
-    color: #000000;
+    color: #ffffff;
 }
 
 #addCourseLink p {
@@ -210,10 +210,10 @@
 }
 
 #registerBtn {
-    background-color: #cbcbcb;
+    background-color: #000000;
     border: 0px;
     border-radius: 7px;
-    color: #000000;
+    color: #ffffff;
     font-size: 20px;
     cursor: pointer;
     height: 50px;
